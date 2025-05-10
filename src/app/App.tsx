@@ -1,31 +1,38 @@
 
-// import { useAtom } from "jotai";
-// import { animeAtom } from "@/shared/store/global.store";
 
-
-import { Layout } from "@/shared/widgets/Layout";
+import { Layout } from "@/shared/layout/Layout";
 import "@styles/tailwindcss.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { RouterConfig } from "@/config/Router";
+
+import { PATHS } from "@/config/paths-app.data";
+
+import { Suspense } from "react";
+import { Loading } from "@/shared/ui/Loading";
+
 
 
 function App() {
-  // const [anime, setAnime] = useAtom(animeAtom);
+  const routerConf = new RouterConfig(PATHS);
+  const paths = routerConf.getPaths();
 
   return (
     <Layout>
-      
-      <main>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <p className="text-gray-700">
-          This is a simple example of a React application using Tailwind CSS.
-        </p>
+        <BrowserRouter>
+            <Suspense fallback={<Loading />}>
+              <Routes>
+                {paths.map(({ path, component: Component }) => (
+                  <Route key={path} path={path} element={<Component />} />
+                ))}
+              </Routes>
+            </Suspense>
+        </BrowserRouter>
 
-
-    
-      </main>
     </Layout>
   )
 }
 
-export default App
+export default App;
+
+
