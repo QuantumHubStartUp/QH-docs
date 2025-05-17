@@ -20,9 +20,9 @@ export const SideBarController: React.FC = () => {
             onClick={toggleSidebar}
         >
             {isSidebarOpen ? (
-                <span className="text-gray-300"><X /></span>
+                <span className="text-gray-300 hover:cursor-pointer"><X /></span>
             ) : (
-                <span className="text-gray-300"><Menu /></span>
+                <span className="text-gray-300 hover:cursor-pointer"><Menu /></span>
             )}
         </button>
     )

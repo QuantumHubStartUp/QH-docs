@@ -4,6 +4,7 @@ import { Link } from "@/shared/ui/Link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { shortNamePath } from "../utils/shortName";
 
 
 
@@ -20,14 +21,16 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         prev.includes(id) ? prev.filter((openId) => openId !== id) : [...prev, id]
       );
     };
+
+    
   
     return (
-      <ul className="ml-2 space-y-1 flex flex-col gap-3 ">
+      <ul className="ml-2 space-y-1 flex flex-col gap-3">
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
-              <Link href={link.url} className="text-blue-400 hover:underline">
-                {link.name}
+              <Link href={link.url} className="text-blue-400 hover:underline" title = {link.name}>
+                {shortNamePath(link.name)}
               </Link>
             ) : (
               <div >
@@ -35,7 +38,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
                   onClick={() => toggleOpen(link.id)}
                   className="font-semibold cursor-pointer flex items-center justify-between select-none "
                 >
-                  {link.name}
+                  {shortNamePath(link.name)}
                   <span className="ml-1 text-xs">
                     {openIds.includes(link.id) ? <ChevronUp /> : <ChevronDown />}
                   </span>

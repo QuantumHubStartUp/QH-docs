@@ -1,10 +1,10 @@
 
 
 import { Layout } from "@/shared/layout/Layout";
-import "@styles/tailwindcss.css";
+import "@shared/styles/tailwindcss.css";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { RouterConfig } from "@/config/Router";
+
 
 import { PATHS } from "@/config/paths-app.data";
 
@@ -14,8 +14,8 @@ import { Loading } from "@/shared/ui/Loading";
 
 
 function App() {
-  const routerConf = new RouterConfig(PATHS);
-  const paths = routerConf.getPaths();
+
+  const paths = Object.values(PATHS);
 
   return (
     <Layout>

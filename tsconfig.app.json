@@ -25,7 +25,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@styles/*": ["src/styles/*"],
       "@features/*": ["src/features/*"],
       "@shared/*": ["src/shared/*"],
       "@database/*": ["src/database/*"],
@@ -33,7 +32,8 @@
       "@ui/*": ["src/shared/ui/*"],
       "@entities/*": ["src/entities/*"],
       "@widgets/*": ["src/shared/widgets/*"],
-      "@types/*": ["src/shared/types/*"]
+      "@types/*": ["src/shared/types/*"],
+      "@assets/*": ["assets/*"],
     },
 
   },

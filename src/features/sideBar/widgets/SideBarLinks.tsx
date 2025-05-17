@@ -21,7 +21,7 @@ export const SideBarLinks = () => {
     return (
         <>
         {linkState.links.map((linkGroup) => (
-            <div key={linkGroup.id} className="mb-4 ">
+            <div key={linkGroup.id} className="mb-4">
               <h2
                 onClick={() => toggleGroup(linkGroup.id)}
                 className="text-lg font-semibold text-gray-300 mb-2 cursor-pointer select-none flex items-center justify-between"
