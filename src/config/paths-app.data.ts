@@ -38,7 +38,7 @@ export const externalLinks: Record<string, TExternalLinks> = {
     qhDocsGitHub: {
       id: 1,
       name: "GitHub документации",
-      url: "https://vitejs.dev/",
+      url: "https://github.com/freyzan2006/qh-docs",
     },
 
     qhGitHub: {
