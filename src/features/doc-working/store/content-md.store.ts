@@ -1,4 +1,4 @@
 import { atom } from 'jotai'
 
 
-export const contentAtom = atom('Загрузка...')
+export const contentAtom = atom<string>('Загрузка...')

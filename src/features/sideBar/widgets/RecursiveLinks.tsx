@@ -25,7 +25,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
     
   
     return (
-      <ul className="ml-2 space-y-1 flex flex-col gap-3">
+      <ul className="flex flex-col  gap-3 pl-2 pt-2">
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
@@ -33,7 +33,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
                 {shortNamePath(link.name)}
               </Link>
             ) : (
-              <div >
+              <div className="flex flex-col gap-3">
                 <div
                   onClick={() => toggleOpen(link.id)}
                   className="font-semibold cursor-pointer flex items-center justify-between select-none "
@@ -51,7 +51,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden pl-2 "
+                      className="overflow-hidden pl-2"
                     >
                       <RecursiveLinks links={link.children} />
                     </motion.div>

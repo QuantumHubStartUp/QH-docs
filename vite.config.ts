@@ -23,6 +23,12 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    vitePluginString()
+    vitePluginString(
+      {
+        include: '**/*.md',
+      
+      },
+
+    )
   ],
 })
