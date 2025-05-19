@@ -76,7 +76,7 @@ export const useGetFileMd = () => {
             setContent('Ошибка загрузки файла');
             setFileName(null);
         }
-    }, [relativePath]);
+    }, [normPath, setContent]);
 
   return { normPath, content, fileName };
 };

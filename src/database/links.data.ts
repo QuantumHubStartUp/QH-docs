@@ -1,4 +1,4 @@
-import { externalLinks, PATHS } from "@/config/paths-app.data";
+
 import { ILinkGroup, ILinkItem } from "@/entities/link.entities";
 
 
@@ -155,8 +155,21 @@ const toUrl = (path: string) =>
 const toName = (segment: string) =>
   segment.charAt(0).toUpperCase() + segment.slice(1);
 
+type IRootItem = {
+  
+  __children: IRoot;
+  __url: string | null;
+  
+}
+interface IRoot {
+  [key: string]: IRootItem
+}
+
+
+
 function buildTree(paths: string[]): ILinkItem[] {
-  const root: any = {}; // временная структура
+  const root: IRoot = {}; // временная структура
+  
 
   for (const path of paths) {
     const relativePath = path
@@ -183,8 +196,8 @@ function buildTree(paths: string[]): ILinkItem[] {
   // Рекурсивное преобразование временной структуры в ILink[]
   let idCounter = 1;
 
-  function toLinks(obj: any): ILinkItem[] {
-    return Object.entries(obj).map(([key, value]: [string, any]) => {
+  function toLinks(obj: IRoot): ILinkItem[] {
+    return Object.entries(obj).map(([key, value]: [string, IRootItem]) => {
       const children = toLinks(value.__children);
       const link: ILinkItem = {
         id: idCounter++,
@@ -196,6 +209,8 @@ function buildTree(paths: string[]): ILinkItem[] {
     });
   }
 
+
+  console.log(root)
   return toLinks(root);
 }
 
