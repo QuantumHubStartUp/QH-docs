@@ -1,6 +1,6 @@
 import { ILinkItem } from "@/entities/link.entities";
 
-import { Link } from "@/shared/ui/Link";
+import { LinkUI } from "@/shared/ui/LinkUI";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
@@ -29,9 +29,9 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
-              <Link href={link.url} className="text-blue-400 hover:underline" title = {link.name}>
+              <LinkUI to={link.url} className="text-blue-400 hover:underline" title = {link.name}>
                 {shortNamePath(link.name)}
-              </Link>
+              </LinkUI>
             ) : (
               <div className="flex flex-col gap-3">
                 <div

@@ -2,7 +2,7 @@
 
 import { Layout } from "@/shared/layout/Layout";
 import "@shared/styles/tailwindcss.css";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Layout>
-        <BrowserRouter>
+        
             <Suspense fallback={<Loading />}>
               <Routes>
                 {paths.map(({ path, component: Component }) => (
@@ -27,7 +27,7 @@ function App() {
                 ))}
               </Routes>
             </Suspense>
-        </BrowserRouter>
+       
 
     </Layout>
   )
