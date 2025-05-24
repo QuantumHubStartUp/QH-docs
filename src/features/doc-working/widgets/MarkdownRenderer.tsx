@@ -9,35 +9,66 @@ interface MarkdownRendererProps {
   markdownUrl: string; // путь к .md-файлу
 }
 
-export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
+// export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
 
   
-    const [htmlContent, setHtmlContent] = useState<string>("");
+//     const [htmlContent, setHtmlContent] = useState<string>("");
 
-    useEffect(() => {
-        const fetchMd = async () => {
-            try {
-                const res = await fetch(markdownUrl);
-                const md = await res.text();
-                const dirty = marked(md);
-                const clean = DOMPurify.sanitize(dirty);
-                setHtmlContent(clean);
-            } catch (error) {
-                console.error("Ошибка загрузки Markdown:", error);
-            }
-        };
+//     useEffect(() => {
+//         const fetchMd = async () => {
+//             try {
+//                 const res = await fetch(markdownUrl);
+//                 const md = await res.text();
+//                 const dirty = marked(md);
+//                 const clean = DOMPurify.sanitize(dirty);
+//                 setHtmlContent(clean);
+//             } catch (error) {
+//                 console.error("Ошибка загрузки Markdown:", error);
+//             }
+//         };
 
-        fetchMd();
-    }, [markdownUrl]);
+//         fetchMd();
+//     }, [markdownUrl]);
 
-    if (!markdownUrl) return null;
+//     if (!markdownUrl) return null;
 
-    return (
-        <div
-            className="prose prose-slate max-w-none"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-    );
+//     return (
+//         <div
+//             className="prose prose-slate max-w-none"
+//             dangerouslySetInnerHTML={{ __html: htmlContent }}
+//         />
+//     );
+// };
+
+
+export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
+  const [htmlContent, setHtmlContent] = useState<string>("");
+
+  useEffect(() => {
+    const fetchMd = async () => {
+      try {
+        const res = await fetch(markdownUrl);
+        const md: string = await res.text();
+        const dirty: string = await marked(md);
+        const clean: string = DOMPurify.sanitize(dirty);
+        setHtmlContent(clean);
+      } catch (error) {
+        console.error("Ошибка загрузки Markdown:", error);
+      }
+    };
+
+    if (markdownUrl) {
+      fetchMd();
+    }
+  }, [markdownUrl]);
+
+  if (!markdownUrl) return null;
+
+  return (
+    <div
+      className="prose prose-slate max-w-none"
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
+  );
 };
-
 
