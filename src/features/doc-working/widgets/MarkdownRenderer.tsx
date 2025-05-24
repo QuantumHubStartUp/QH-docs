@@ -2,6 +2,7 @@
 
 
 
+
 import DOMPurify from "dompurify";
 import { marked } from "marked";
 import { useEffect, useState } from "react";
@@ -43,10 +44,12 @@ interface MarkdownRendererProps {
 
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
   const [htmlContent, setHtmlContent] = useState<string>("");
+   
 
   useEffect(() => {
     const fetchMd = async () => {
       try {
+        
         const res = await fetch(markdownUrl);
         const md: string = await res.text();
         const dirty: string = await marked(md);

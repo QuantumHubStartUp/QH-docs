@@ -6,21 +6,7 @@ import { contentAtom } from "../store/content-md.store";
 
 import { docs } from "@/database/links.data";
 
-// export const useGetFileMd = () => {
-//     const location = useLocation();
-//     const [content, setContent] = useAtom(contentAtom);
-    
-    
-//     const relativePath = findMdPath(location);
 
-//     useEffect(() => {
-//         import(`@assets/${relativePath}.md?raw`)
-//         .then(module => setContent(module.default))
-//         .catch(() => setContent('Ошибка загрузки файла'));
-//     }, [relativePath]);
-
-//     return { relativePath, content };
-// }
 
 export const useGetFileMd = () => {
   const location = useLocation();

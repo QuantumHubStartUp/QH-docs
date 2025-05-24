@@ -8,20 +8,30 @@ import { ILinkGroup, ILinkItem } from "@/entities/link.entities";
 
 
 
+// export const pathAssetsOfDocs = "/src/assets/docs";
 
 
 
 
-
-export const docs: Record<string, string> = import.meta.glob('/assets/docs/**/*.md', {
+export const docs: Record<string, string> = import.meta.glob(`/src/assets/docs/**/*.md`, {
   eager: true,
   import: 'default',
 });
 
-const toUrl = (path: string) =>
-  path
-    .replace('/assets/docs', '/docs')
+export const docsUrls: Record<string, string> = import.meta.glob('/src/assets/docs/**/*.md', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+});
+
+
+
+
+export const toUrl = (path: string) => 
+  docsUrls[path]
+    .replace('/src/assets/docs', '/docs')
     .replace(/\.md$/, '');
+
 
 const toName = (segment: string) =>
   segment.charAt(0).toUpperCase() + segment.slice(1);
@@ -44,7 +54,7 @@ function buildTree(paths: string[]): ILinkItem[] {
 
   for (const path of paths) {
     const relativePath = path
-      .replace('/assets/docs/', '')
+      .replace('/src/assets/docs/', '')
       .replace(/\.md$/, '');
     const segments = relativePath.split('/');
 

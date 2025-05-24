@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import vitePluginString from 'vite-plugin-string'
 import path from 'path';
 
+
+
 // https://vite.dev/config/
 export default defineConfig({
   resolve: {
@@ -29,7 +31,7 @@ export default defineConfig({
       
       },
 
-    )
+    ),
   ],
   base: "/",
 })
