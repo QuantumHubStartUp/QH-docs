@@ -26,37 +26,14 @@ export const useGetFileMd = () => {
   const location = useLocation();
   const [content, setContent] = useAtom(contentAtom);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [mdPath, setMdPath] = useState<string | null>(null);
+
 
   const relativePath = findMdPath(location); // -> "/docs/api/rest"
 
-//   useEffect(() => {
-//     const key = Object.keys(docs).find((k) =>
-//       k.includes(relativePath.replace('/docs', ''))
-//     );
-
-    
-  
-
-//     if (key && docs[key]) {
-//       setContent(docs[key]);
-        
-//       // Получить имя файла
-//       const match = key.match(/([^/\\]+)\.md$/);
-//       if (match) {
-//         setFileName(match[1]); // "rest"
-//       } else {
-//         setFileName(null);
-//       }
-//     } else {
-//       setContent('Ошибка загрузки файла');
-//       setFileName(null);
-//     }
-//   }, [relativePath]);
-
-
     const normPath = decodeURIComponent(relativePath.replace('/docs', ''));
     useEffect(() => {
-    // Декодируем путь и убираем префикс "/docs"
+        // Декодируем путь и убираем префикс "/docs"
         
 
         // Ищем ключ в docs по декодированному пути
@@ -64,6 +41,7 @@ export const useGetFileMd = () => {
 
         if (key && docs[key]) {
             setContent(docs[key]);
+            setMdPath(key); 
 
             // Получаем имя файла из ключа (пути)
             const match = key.match(/([^/\\]+)\.md$/);
@@ -74,9 +52,11 @@ export const useGetFileMd = () => {
             }
         } else {
             setContent('Ошибка загрузки файла');
+            
             setFileName(null);
+            setMdPath(null);
         }
     }, [normPath, setContent]);
 
-  return { normPath, content, fileName };
+  return { normPath, content, fileName, relativePath, mdPath };
 };

@@ -4,7 +4,10 @@ import { LinkUI } from "@/shared/ui/LinkUI";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import { shortNamePath } from "../utils/shortName";
+
+import { useAtom } from "jotai";
+import { isSidebarOpenAtom } from "../../../shared/store/side-bar.store";
+import { shortNamePath } from "@/shared/utils/shortText.utils";
 
 
 
@@ -15,7 +18,9 @@ interface RecursiveLinksProps {
 
 export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
     const [openIds, setOpenIds] = useState<number[]>([]);
-  
+
+    const [ , setIsSidebarOpen ] = useAtom(isSidebarOpenAtom)
+
     const toggleOpen = (id: number) => {
       setOpenIds((prev) =>
         prev.includes(id) ? prev.filter((openId) => openId !== id) : [...prev, id]
@@ -29,7 +34,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
-              <LinkUI to={link.url} className="text-blue-400 hover:underline" title = {link.name}>
+              <LinkUI onClick = { () => setIsSidebarOpen(false) } to={link.url} className="text-blue-400 hover:underline" title = {link.name}>
                 {shortNamePath(link.name)}
               </LinkUI>
             ) : (

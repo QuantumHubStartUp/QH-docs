@@ -1,8 +1,9 @@
 
-import { SideBarController } from "@/features/sideBar";
+
 import { Logo } from "../ui/Logo";
 import { ELayoutCSS } from "../types/layout-css.enum";
 import { Container } from "../layout/Container";
+import { SideBarController } from "./sideBar/SideBarController";
 
 
 

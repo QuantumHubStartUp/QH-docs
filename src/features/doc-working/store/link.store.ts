@@ -1,4 +1,5 @@
 
+
 import { linksData } from '@/database/links.data';
 
 
@@ -15,4 +16,3 @@ export const linkAtom = atom({
 
 export const openGroupsAtom = atom<number[]>([]); 
 
-export const isSidebarOpenAtom = atom(false);

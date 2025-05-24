@@ -1,4 +1,4 @@
-import { isSidebarOpenAtom } from "@/features/sideBar/store/side-bar.store";
+import { isSidebarOpenAtom } from "@/shared/store/side-bar.store";
 import { useAtom } from "jotai";
 import { ELayoutCSS } from "../types/layout-css.enum";
 

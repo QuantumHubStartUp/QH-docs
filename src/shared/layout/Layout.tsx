@@ -1,8 +1,9 @@
-import { SideBar } from "@/features/sideBar";
+
 import { Container } from "./Container";
 import { Footer } from "../ui/Footer";
 import { Header } from "../widgets/Header";
 import { DarkScreen } from "../widgets/DarkScreen";
+import { SideBar } from "../widgets/sideBar/SideBar";
 
 
 interface ILayoutProps extends React.HTMLProps<HTMLDivElement> {

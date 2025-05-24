@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 
 import { Menu, X } from "lucide-react";
-import { isSidebarOpenAtom } from "../store/side-bar.store";
+import { isSidebarOpenAtom } from "@/shared/store/side-bar.store";
 
 
 

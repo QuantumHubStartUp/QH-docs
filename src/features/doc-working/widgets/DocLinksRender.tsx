@@ -1,13 +1,13 @@
 
-import { RecursiveLinks } from "./RecursiveLinks";
+import { RecursiveLinks } from "../ux/RecursiveLinks";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-import { openGroupsAtom, linkAtom } from "../store/side-bar.store";
+import { openGroupsAtom, linkAtom } from "../store/link.store";
 import { useAtom } from "jotai";
 
 import { AnimatePresence, motion } from "framer-motion"; 
 
-export const SideBarLinks = () => {
+export const DocLinksRender = () => {
     const [linkState] = useAtom(linkAtom);
     const [openGroups, setOpenGroups] = useAtom(openGroupsAtom); 
 
@@ -41,7 +41,10 @@ export const SideBarLinks = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <RecursiveLinks links={linkGroup.links} />
+                    <RecursiveLinks 
+                      links={linkGroup.links} 
+                      
+                    />
                   </motion.div>
                 )}
               </AnimatePresence>

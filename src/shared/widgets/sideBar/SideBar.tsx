@@ -3,12 +3,13 @@
 
 
 import { Logo } from "@/shared/ui/Logo";
-import { isSidebarOpenAtom } from "../store/side-bar.store";
+import { isSidebarOpenAtom } from "../../store/side-bar.store";
 import { useAtom } from "jotai";
 import { SideBarController } from "./SideBarController";
 import { AnimatePresence, motion } from "framer-motion"; 
-import { SideBarLinks } from "./SideBarLinks";
+// import { SideBarLinks } from "./SideBarLinks";
 import { ELayoutCSS } from "@/shared/types/layout-css.enum";
+import { DocLinksRender } from "@/features/doc-working";
 
 
 
@@ -39,7 +40,7 @@ export const SideBar = () => {
           </div>
 
           <nav className="flex flex-col p-4 overflow-y-auto">
-            <SideBarLinks />
+            <DocLinksRender />
           </nav>
         </motion.div>
       )}
