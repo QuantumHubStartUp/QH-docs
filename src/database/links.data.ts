@@ -22,22 +22,20 @@ export const docsUrls: Record<string, string> = import.meta.glob(
   '/src/assets/docs/**/*.md',
   {
     eager: true,
-    query: '?url',
+    import: 'default',
   }
 );
 
-function hasDefault(mod: unknown): mod is { default: string } {
-  return typeof mod === 'object' && mod !== null && 'default' in mod;
-}
+
 
 export const toUrl = (path: string): string | null => {
-  const mod = docsUrls[path];
-  if (!mod) return null;
+  // const mod = docsUrls[path];
+  // if (!mod) return null;
 
-  // Если это модуль, берем из default путь
-  const url = hasDefault(mod) ? mod.default : mod;
+  // // Если это модуль, берем из default путь
+  // const url = hasDefault(mod) ? mod.default : mod;
 
-  return url
+  return path
     .replace('/src/assets/docs', '/docs')
     .replace(/\.md$/, '');
 };
