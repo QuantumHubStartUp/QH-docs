@@ -22,6 +22,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, './assets'),
     },
   },
+  
   plugins: [
     react(),
     tailwindcss(),
@@ -34,4 +35,5 @@ export default defineConfig({
     ),
   ],
   base: "/",
+  assetsInclude: ['**/*.md', '**/*.png', '**/*.jpg'],
 })

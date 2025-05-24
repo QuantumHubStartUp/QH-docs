@@ -26,13 +26,38 @@ export const docsUrls: Record<string, string> = import.meta.glob(
   }
 );
 
+function hasDefault(mod: unknown): mod is { default: string } {
+  return typeof mod === 'object' && mod !== null && 'default' in mod;
+}
 
+export const toUrl = (path: string): string | null => {
+  const mod = docsUrls[path];
+  if (!mod) return null;
 
+  // Если это модуль, берем из default путь
+  const url = hasDefault(mod) ? mod.default : mod;
 
-export const toUrl = (path: string) => 
-  docsUrls[path]
+  return url
     .replace('/src/assets/docs', '/docs')
     .replace(/\.md$/, '');
+};
+
+// export const toUrl = (path: string) => {
+//   console.log()
+//   return docsUrls[path]
+// }
+  
+    // ?.replace('/src/assets/docs', '/docs') // или '/assets/docs'
+    // ?.replace(/\.md$/, '');
+
+
+// export const toUrl = (path: string) => {
+ 
+//   return docsUrls[path]
+// }
+  
+    // .replace('/src/assets/docs', '/docs')
+    // .replace(/\.md$/, '');
 
 
 const toName = (segment: string) =>
