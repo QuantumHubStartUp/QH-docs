@@ -18,11 +18,13 @@ export const docs: Record<string, string> = import.meta.glob(`/src/assets/docs/*
   import: 'default',
 });
 
-export const docsUrls: Record<string, string> = import.meta.glob('/src/assets/docs/**/*.md', {
-  eager: true,
-  import: 'default',
-  query: '?url',
-});
+export const docsUrls: Record<string, string> = import.meta.glob(
+  '/src/assets/docs/**/*.md',
+  {
+    eager: true,
+    query: '?url',
+  }
+);
 
 
 
