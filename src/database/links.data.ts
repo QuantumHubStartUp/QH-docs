@@ -37,7 +37,8 @@ export const toUrl = (path: string): string | null => {
 
   return path
     .replace('/src/assets/docs', '/docs')
-    .replace(/\.md$/, '');
+    .replace(/\.md$/, '')
+
 };
 
 // export const toUrl = (path: string) => {

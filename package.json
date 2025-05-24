@@ -24,6 +24,7 @@
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
     "tailwindcss": "^4.1.4",
+    "vite-plugin-static-copy": "^3.0.0",
     "vite-plugin-string": "^1.2.3"
   },
   "devDependencies": {

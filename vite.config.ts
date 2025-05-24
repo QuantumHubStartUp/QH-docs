@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 import vitePluginString from 'vite-plugin-string'
 import path from 'path';
-
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 
 // https://vite.dev/config/
@@ -33,7 +33,15 @@ export default defineConfig({
       },
 
     ),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/assets/docs', // откуда копируем
+          dest: 'docs'             // куда кладём в dist
+        }
+      ]
+    })
   ],
   base: "/",
-  assetsInclude: ['**/*.md', '**/*.png', '**/*.jpg'],
+
 })

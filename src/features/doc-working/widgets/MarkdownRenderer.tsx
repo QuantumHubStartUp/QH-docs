@@ -49,8 +49,8 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl 
   useEffect(() => {
     const fetchMd = async () => {
       try {
-        
-        const res = await fetch(markdownUrl);
+        const fixMarkdownUrl = markdownUrl.replace('/src/assets/docs', '/docs/docs')
+        const res = await fetch(fixMarkdownUrl);
         const md: string = await res.text();
         const dirty: string = await marked(md);
         const clean: string = DOMPurify.sanitize(dirty);
