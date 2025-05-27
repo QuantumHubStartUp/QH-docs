@@ -31,9 +31,10 @@
       "@app/*": ["src/app/*"],
       "@ui/*": ["src/shared/ui/*"],
       "@entities/*": ["src/entities/*"],
-      "@widgets/*": ["src/shared/widgets/*"],
+      "@widgets/*": ["src/shared/components/widgets/*"],
       "@types/*": ["src/shared/types/*"],
       "@assets/*": ["assets/*"],
+      "@components/*": ["src/shared/components/*"],
     },
 
   },

@@ -1,6 +1,6 @@
 import { ILinkItem } from "@/entities/link.entities";
 
-import { LinkUI } from "@/shared/ui/LinkUI";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useAtom } from "jotai";
 import { isSidebarOpenAtom } from "../../../shared/store/side-bar.store";
 import { shortNamePath } from "@/shared/utils/shortText.utils";
+import { LinkUI } from "@/shared/components/ui/LinkUI";
 
 
 

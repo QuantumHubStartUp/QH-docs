@@ -10,7 +10,7 @@ export const PATHS: Record<string, TRoute> = {
     home: {
         name: "Главная",
         path: "/",
-        component: lazy(() => import("@app/pages/HomePage")),
+        component: lazy(() => import("@/app/pages/home/HomePage")),
     },
     about: {
         name: "О нас",

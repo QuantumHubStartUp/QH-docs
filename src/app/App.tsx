@@ -1,6 +1,6 @@
 
 
-import { Layout } from "@/shared/layout/Layout";
+import { Layout } from "@/shared/components/layout/Layout";
 import "@shared/styles/tailwindcss.css";
 import { Routes, Route } from 'react-router-dom';
 
@@ -9,7 +9,8 @@ import { Routes, Route } from 'react-router-dom';
 import { PATHS } from "@/config/paths-app.data";
 
 import { Suspense } from "react";
-import { Loading } from "@/shared/ui/Loading";
+import { Loading } from "@/shared/components/ui/Loading";
+
 
 
 

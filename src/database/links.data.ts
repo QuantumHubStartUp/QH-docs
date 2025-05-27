@@ -152,7 +152,7 @@ export const linksData: ILinkGroup[] = [
   
 ];
 
-
+console.log(linksData)
 
 
 
@@ -183,3 +183,84 @@ export const linksData: ILinkGroup[] = [
 //     ]
 //   }
 // ]
+
+
+// Примерная структура:
+
+// {
+//   "id": 2,
+//   "name": "Документация",
+//   "links": [
+//     {
+//       "id": 9,
+//       "name": "Техническая документация",
+//       "children": [
+//         {
+//           "id": 2,
+//           "name": "API",
+//           "children": [
+//             { "id": 1, "name": "Обзор", "url": "/docs/api/overview" },
+//             { "id": 2, "name": "REST", "url": "/docs/api/rest" },
+//             { "id": 3, "name": "GraphQL", "url": "/docs/api/graphql" }
+//           ]
+//         },
+//         {
+//           "id": 4,
+//           "name": "DevOps и развертывание",
+//           "children": [
+//             { "id": 3, "name": "Деплой проекта", "url": "/docs/devops/deploy" },
+//             { "id": 4, "name": "CI/CD", "url": "/docs/devops/cicd" }
+//           ]
+//         },
+//         {
+//           "id": 6,
+//           "name": "Frontend",
+//           "children": [
+//             { "id": 5, "name": "Обзор", "url": "/docs/frontend/overview" },
+//             { "id": 6, "name": "State Management", "url": "/docs/frontend/state-management" },
+//             { "id": 7, "name": "UI/UX", "url": "/docs/frontend/ui" }
+//           ]
+//         },
+//         {
+//           "id": 8,
+//           "name": "Архитектура",
+//           "children": [
+//             { "id": 7, "name": "Общая схема", "url": "/docs/architecture/overview" }
+//           ]
+//         }
+//       ]
+//     },
+//     {
+//       "id": 16,
+//       "name": "О проекте",
+//       "children": [
+//         {
+//           "id": 17,
+//           "name": "Обзор",
+//           "children": [
+//             { "id": 18, "name": "Введение", "url": "/docs/project/introduction" },
+//             { "id": 19, "name": "Цели", "url": "/docs/project/goals" },
+//             { "id": 20, "name": "Проблематика", "url": "/docs/project/problem" },
+//             { "id": 21, "name": "Сценарии", "url": "/docs/project/use-cases" }
+//           ]
+//         },
+//         {
+//           "id": 22,
+//           "name": "Команда",
+//           "children": [
+//             { "id": 23, "name": "Участники", "url": "/docs/project/team" }
+//           ]
+//         },
+//         {
+//           "id": 24,
+//           "name": "Развитие",
+//           "children": [
+//             { "id": 25, "name": "Прогресс", "url": "/docs/project/progress" },
+//             { "id": 26, "name": "Новости", "url": "/docs/project/news" }
+//           ]
+//         }
+//       ]
+//     }
+//   ]
+// }
+

@@ -20,6 +20,7 @@ export default defineConfig({
       "@shared": path.resolve(__dirname, './src/shared'),
       "@types": path.resolve(__dirname, './src/shared/types'),
       "@assets": path.resolve(__dirname, './assets'),
+      "@components": path.resolve(__dirname, './src/shared/components'),
     },
   },
   
