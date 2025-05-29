@@ -15,12 +15,12 @@ export const PATHS: Record<string, TRoute> = {
     about: {
         name: "О нас",
         path: "/about",
-        component: lazy(() => import("@app/pages/AboutPage")),
+        component: lazy(() => import("@/app/pages/about/AboutPage")),
     },
     docs: {
         name: "Документация",
         path: "/docs/*",
-        component: lazy(() => import("@app/pages/DocsPage")),
+        component: lazy(() => import("@/app/pages/docs/DocsPage")),
     },
 };
 

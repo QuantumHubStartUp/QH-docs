@@ -1,6 +1,7 @@
 import { DocRender } from '@/features/doc-working';
 
 
+
 import 'highlight.js/styles/atom-one-dark.css';
 
 const DocsPage = () => {
@@ -8,7 +9,10 @@ const DocsPage = () => {
 
   return (
     <main className='prose mx-auto markdown-body'>
-      <DocRender />
+
+        <DocRender />
+ 
+      
      
 
     </main>

@@ -2,6 +2,7 @@
 
 import { externalLinks, PATHS } from "@/config/paths-app.data";
 import { ThreeDMarquee } from "@/shared/components/ui/3d-marquee";
+import { ELayoutCSS } from "@/shared/types";
 import { Link } from "react-router-dom";
 
 
@@ -74,7 +75,7 @@ export function Here() {
     "/logo.jpg",
   ];
   return (
-    <div className="relative mx-auto my-10 flex h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl">
+    <div className={`${ELayoutCSS.LEVEL_1} relative mx-auto my-10 flex h-screen w-full max-w-7xl flex-col items-center justify-center overflow-hidden rounded-3xl`}>
       <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
         Документация  {" "}
         <span className="relative z-20 inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white underline decoration-sky-500 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">

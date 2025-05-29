@@ -11,7 +11,7 @@ import { Logo } from "../ui/Logo";
 
 export const Header: React.FC = () => {
     return (
-        <header className={`sticky top-0 left-0 right-0 ${ELayoutCSS.LEVEL_1} bg-black/70 backdrop-blur-md shadow-md min-h-[50px]`}>  
+        <header className={`sticky top-0 left-0 right-0 ${ELayoutCSS.LEVEL_2} bg-black/70 backdrop-blur-md shadow-md min-h-[50px]`}>  
             <Container css = "flex flex-row items-center justify-between p-4 gap-4 xl:flex-row">
                 <SideBarController />
                 
