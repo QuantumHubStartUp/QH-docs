@@ -11,6 +11,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ELayoutCSS } from "@/shared/types/layout-css.enum";
 import { DocLinksRender } from "@/features/doc-working";
 import { Logo } from "@/shared/components/ui/Logo";
+import { Search } from "@/features/search";
+
 
 
 
@@ -41,6 +43,7 @@ export const SideBar = () => {
           </div>
 
           <nav className="flex flex-col p-4 overflow-y-auto">
+            <Search />
             <DocLinksRender />
           </nav>
         </motion.div>
