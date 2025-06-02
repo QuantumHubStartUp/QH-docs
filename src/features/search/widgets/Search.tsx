@@ -6,7 +6,7 @@ import { useAtom } from "jotai";
 
 
 export const Search: React.FC = () => {
-    const [searchValue, _] = useAtom(searchValueAtom);
+    const [searchValue, ] = useAtom(searchValueAtom);
     
     return (
         <div>
