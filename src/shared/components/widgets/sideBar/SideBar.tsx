@@ -37,12 +37,12 @@ export const SideBar = () => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className={`fixed top-0 left-0 h-full w-[300px] flex flex-col text-white bg-black/80 backdrop-blur-md shadow-md ${ELayoutCSS.LEVEL_3}`} // <-- фиксированная позиция
         >
-          <div className="flex items-center justify-between h-16 bg-gray-900 px-4">
+          <div className="flex items-center justify-between h-16 bg-gray-900 px-4 ">
             <Logo title="QH DOCS" />
             <SideBarController />
           </div>
 
-          <nav className="flex flex-col p-4 overflow-y-auto">
+          <nav className="flex flex-col p-4 overflow-y-auto gap-4">
             <Search />
             <DocLinksRender />
           </nav>

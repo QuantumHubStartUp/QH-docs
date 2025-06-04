@@ -1,11 +1,12 @@
 
 import { RecursiveLinks } from "../ux/RecursiveLinks";
-import { ChevronDown, ChevronUp } from "lucide-react";
+
 
 import { openGroupsAtom, linkAtom } from "../store/link.store";
 import { useAtom } from "jotai";
 
 import { AnimatePresence, motion } from "framer-motion"; 
+import { ArrowUpIcon, ArrowDownIcon } from "@/shared/components/icons";
 
 export const DocLinksRender = () => {
     const [linkState] = useAtom(linkAtom);
@@ -28,7 +29,7 @@ export const DocLinksRender = () => {
               >
                 {linkGroup.name}
                 <span className="ml-2">
-                  {openGroups.includes(linkGroup.id) ? <ChevronUp /> : <ChevronDown />}
+                  {openGroups.includes(linkGroup.id) ? <ArrowUpIcon /> : <ArrowDownIcon />}
                 </span>
               </h2>
 

@@ -1,7 +1,8 @@
 import { useAtom } from "jotai";
 
-import { Menu, X } from "lucide-react";
+
 import { isSidebarOpenAtom } from "@/shared/store/side-bar.store";
+import { MenuIcon, CrossIcon } from "@/shared/components/icons";
 
 
 
@@ -20,9 +21,9 @@ export const SideBarController: React.FC = () => {
             onClick={toggleSidebar}
         >
             {isSidebarOpen ? (
-                <span className="text-gray-300 hover:cursor-pointer"><X /></span>
+                <span className="text-gray-300 hover:cursor-pointer"><CrossIcon /></span>
             ) : (
-                <span className="text-gray-300 hover:cursor-pointer"><Menu /></span>
+                <span className="text-gray-300 hover:cursor-pointer"><MenuIcon /></span>
             )}
         </button>
     )

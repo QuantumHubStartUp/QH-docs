@@ -2,13 +2,14 @@ import { ILinkItem } from "@/entities/link.entities";
 
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
+
 import { useState } from "react";
 
 import { useAtom } from "jotai";
 import { isSidebarOpenAtom } from "../../../shared/store/side-bar.store";
 import { shortNamePath } from "@/shared/utils/shortText.utils";
 import { LinkUI } from "@/shared/components/ui/LinkUI";
+import { ArrowDownIcon, ArrowUpIcon } from "@/shared/components/icons";
 
 
 
@@ -35,7 +36,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
-              <LinkUI onClick = { () => setIsSidebarOpen(false) } to={link.url} className="text-blue-400 hover:underline" title = {link.name}>
+              <LinkUI onClick = { () => setIsSidebarOpen(false) } to={link.url} className="text-blue-400" title = {link.name}>
                 {shortNamePath(link.name)}
               </LinkUI>
             ) : (
@@ -46,7 +47,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
                 >
                   {shortNamePath(link.name)}
                   <span className="ml-1 text-xs">
-                    {openIds.includes(link.id) ? <ChevronUp /> : <ChevronDown />}
+                    {openIds.includes(link.id) ? <ArrowUpIcon /> : <ArrowDownIcon />}
                   </span>
                 </div>
   

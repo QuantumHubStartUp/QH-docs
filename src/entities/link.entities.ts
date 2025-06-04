@@ -6,7 +6,7 @@ export interface ILinkItem {
     name: string;
     url?: string; // если это обычная ссылка
     children?: ILinkItem[]; // если это вложенное меню
-  }
+}
   
 export interface ILinkGroup {
     id: number;
