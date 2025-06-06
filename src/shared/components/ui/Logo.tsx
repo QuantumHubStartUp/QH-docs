@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
+
 
 interface ILogoProps extends React.HTMLProps<HTMLAnchorElement> {
     title: string;
 }
 
 export const Logo: React.FC<ILogoProps> = ({ title }) => {
+
+    
+
     return (
-        <a href="/" className="flex items-center justify-center h-16 bg-gray-900 rounded-xl p-3">
+        <Link to="/" className="flex items-center justify-center h-16 bg-gray-900 rounded-xl p-3">
 
                 <img 
                     src = "/logo.jpg" 
@@ -15,6 +20,6 @@ export const Logo: React.FC<ILogoProps> = ({ title }) => {
                     { title }
                 </h1>
             
-        </a>
+        </Link>
     );
 }

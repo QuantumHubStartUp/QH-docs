@@ -8,7 +8,7 @@ import { useAtom } from "jotai";
 import { AnimatePresence, motion } from "framer-motion"; 
 import { ArrowUpIcon, ArrowDownIcon } from "@/shared/components/icons";
 
-export const DocLinksRender = () => {
+const DocLinksRender = () => {
     const [linkState] = useAtom(linkAtom);
     const [openGroups, setOpenGroups] = useAtom(openGroupsAtom); 
 
@@ -54,3 +54,6 @@ export const DocLinksRender = () => {
         </>
     )
 }
+
+
+export default DocLinksRender

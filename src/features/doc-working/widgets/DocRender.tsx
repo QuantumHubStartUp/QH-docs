@@ -9,7 +9,7 @@ import { useGetFileMd } from "../hooks/useGetFileMd.hook";
 import { MarkdownRenderer } from './MarkdownRenderer';
 // p-4 md:p-8 rounded-2xl bg-linear-to-r from-cyan-500 to-gray-500 bg-black/80 backdrop-blur-md shadow-md border-solid border-2 border-black
 
-export const DocRender = () => {
+const DocRender = () => {
     const { normPath, fileName, mdPath } = useGetFileMd();
     
     return (
@@ -47,3 +47,5 @@ export const DocRender = () => {
         </section>
     );
 }
+
+export default DocRender;

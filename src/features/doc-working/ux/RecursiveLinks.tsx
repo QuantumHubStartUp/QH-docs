@@ -3,7 +3,7 @@ import { ILinkItem } from "@/entities/link.entities";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import { useAtom } from "jotai";
 import { isSidebarOpenAtom } from "../../../shared/store/side-bar.store";
@@ -29,14 +29,14 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
       );
     };
 
-    
+    const handleCloseSidebar = useCallback(() => setIsSidebarOpen(false), []);
   
     return (
       <ul className="flex flex-col  gap-3 pl-2 pt-2">
         {links.map((link) => (
           <li key={link.id}>
             {link.url ? (
-              <LinkUI onClick = { () => setIsSidebarOpen(false) } to={link.url} className="text-blue-400" title = {link.name}>
+              <LinkUI onClick = { handleCloseSidebar } to={link.url} className="text-blue-400" title = {link.name}>
                 {shortNamePath(link.name)}
               </LinkUI>
             ) : (

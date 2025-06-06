@@ -6,7 +6,7 @@ import { shortNamePath } from "@/shared/utils/shortText.utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 
 
@@ -24,13 +24,14 @@ export const SearchFoundsItem: React.FC<ILinkItemProps> = (props) => {
     
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleClickIsOpen = useCallback(() => setIsOpen((prev) => !prev), [setIsOpen]);
 
 
     if (props.children) {
         return (
             <li className="w-full">
                          
-            <button onClick={() => setIsOpen((prev) => !prev)} className="text-left w-full flex flex-row gap-3">
+            <button onClick={ handleClickIsOpen } className="text-left w-full flex flex-row gap-3 cursor-pointer">
                 {  
                     isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />
                 }

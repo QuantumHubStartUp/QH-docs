@@ -152,7 +152,7 @@ export const linksData: ILinkGroup[] = [
   
 ];
 
-console.log(linksData)
+
 
 
 

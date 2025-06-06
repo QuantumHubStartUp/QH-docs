@@ -7,20 +7,22 @@ import { isSidebarOpenAtom } from "../../../store/side-bar.store";
 import { useAtom } from "jotai";
 import { SideBarController } from "./SideBarController";
 import { AnimatePresence, motion } from "framer-motion"; 
-// import { SideBarLinks } from "./SideBarLinks";
+
 import { ELayoutCSS } from "@/shared/types/layout-css.enum";
-import { DocLinksRender } from "@/features/doc-working";
+
 import { Logo } from "@/shared/components/ui/Logo";
 import { Search } from "@/features/search";
 
+import { lazy, Suspense, useMemo } from 'react';
+import { Loading } from "../../ui/Loading";
 
-
+const DocLinksRenderLazy = lazy(() => import('@/features/doc-working/widgets/DocLinksRender'));
 
 export const SideBar = () => {
 
   const [isSidebarOpen] = useAtom(isSidebarOpenAtom);
 
- 
+  const DocLinksRenderMemo = useMemo(() => DocLinksRenderLazy, []);
 
 
 
@@ -44,7 +46,10 @@ export const SideBar = () => {
 
           <nav className="flex flex-col p-4 overflow-y-auto gap-4">
             <Search />
-            <DocLinksRender />
+
+            <Suspense fallback={<Loading />}>
+              <DocLinksRenderMemo />
+            </Suspense>
           </nav>
         </motion.div>
       )}

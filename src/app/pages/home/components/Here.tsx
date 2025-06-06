@@ -40,7 +40,7 @@ import { Link } from "react-router-dom";
   //   "https://assets.aceternity.com/world-map.webp",
   // ];
 
-export function Here() {
+function Here() {
   const images = [
     "/logo.jpg",
     "/logo.jpg",
@@ -110,3 +110,6 @@ export function Here() {
     </div>
   );
 }
+
+
+export default Here;

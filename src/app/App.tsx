@@ -20,16 +20,13 @@ function App() {
 
   return (
     <Layout>
-        
-            <Suspense fallback={<Loading />}>
-              <Routes>
-                {paths.map(({ path, component: Component }) => (
-                  <Route key={path} path={path} element={<Component />} />
-                ))}
-              </Routes>
-            </Suspense>
-       
-
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          {paths.map(({ path, component: Component }) => (
+            <Route key={path} path={path} element={<Component />} />
+          ))}
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }
