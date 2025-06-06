@@ -15,7 +15,7 @@ export const SideBarController: React.FC = () => {
 
     
     
-    const toggleSidebar = useCallback(() => setIsSidebarOpen(prev => !prev), []);
+    const toggleSidebar = useCallback(() => setIsSidebarOpen(prev => !prev), [setIsSidebarOpen]);
 
     return (
         <button

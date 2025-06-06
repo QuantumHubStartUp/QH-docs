@@ -29,7 +29,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
       );
     };
 
-    const handleCloseSidebar = useCallback(() => setIsSidebarOpen(false), []);
+    const handleCloseSidebar = useCallback(() => setIsSidebarOpen(false), [setIsSidebarOpen]);
   
     return (
       <ul className="flex flex-col  gap-3 pl-2 pt-2">
