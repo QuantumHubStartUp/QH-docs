@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { findMdPath } from "../utils/findMd.utils";
-import { useAtom } from "jotai";
-import { contentAtom } from "../store/content-md.store";
+
+// import { contentAtom } from "../store/content-md.store";
 
 import { docs } from "@/database/links.data";
 
@@ -10,7 +10,7 @@ import { docs } from "@/database/links.data";
 
 export const useGetFileMd = () => {
   const location = useLocation();
-  const [content, setContent] = useAtom(contentAtom);
+  // const [content, setContent] = useAtom(contentAtom);
   const [fileName, setFileName] = useState<string | null>(null);
   const [mdPath, setMdPath] = useState<string | null>(null);
 
@@ -26,7 +26,7 @@ export const useGetFileMd = () => {
         const key = Object.keys(docs).find(k => decodeURIComponent(k).includes(normPath));
 
         if (key && docs[key]) {
-            setContent(docs[key]);
+            // setContent(docs[key]);
             setMdPath(key); 
 
             // Получаем имя файла из ключа (пути)
@@ -37,12 +37,12 @@ export const useGetFileMd = () => {
             setFileName(null);
             }
         } else {
-            setContent('Ошибка загрузки файла');
+            // setContent('Ошибка загрузки файла');
             
             setFileName(null);
             setMdPath(null);
         }
-    }, [normPath, setContent]);
+    }, [normPath]);
 
-  return { normPath, content, fileName, relativePath, mdPath };
+  return { normPath, fileName, mdPath };
 };

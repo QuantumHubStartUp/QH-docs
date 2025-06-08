@@ -13,7 +13,7 @@ const HereLazy = lazy(() => import('./components/Here'));
 
 const HomePage = () => {
     return (
-        <main className="flex flex-row items-start justify-between">
+        <main className="flex flex-row items-center justify-between">
 
             
             <Suspense fallback={<Loading />}>
