@@ -59,4 +59,10 @@ export const externalLinks: Record<string, TExternalLinks> = {
       url: "https://github.com/freyzan2006/qh/QH-backed",
     },
 
+    qhProject: {
+      id: 5,
+      name: "Сам проект",
+      url: "https://qh-frontend-web.vercel.app",
+    },
+
 };

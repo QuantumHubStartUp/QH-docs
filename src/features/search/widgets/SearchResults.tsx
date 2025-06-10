@@ -18,7 +18,7 @@ export const SearchResults: React.FC = () => {
 
 
     return (
-        <ul className="divide-y flex flex-col gap-3 items-center w-full overflow-y-auto">
+        <ul className="divide-y divide-gray-200 flex flex-col gap-3 items-center w-full overflow-y-auto">
             { filteredLinks.map((link) => (
                 <SearchFoundsItem key={`${link.id}-${link.name}`} {...link} />
             ))}

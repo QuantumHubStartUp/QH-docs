@@ -1,5 +1,5 @@
 import { ILinkItem } from "@/entities/link.entities";
-import { ArrowDownIcon, ArrowUpIcon } from "@/shared/components/icons";
+import { TreeArrowLeft, TreeArrowRight } from "@/shared/components/icons";
 
 import { LinkUI } from "@/shared/components/ui/LinkUI";
 import { shortNamePath } from "@/shared/utils/shortText.utils";
@@ -31,9 +31,10 @@ export const SearchFoundsItem: React.FC<ILinkItemProps> = (props) => {
         return (
             <li className="w-full">
                          
-            <button onClick={ handleClickIsOpen } className="text-left w-full flex flex-row gap-3 cursor-pointer">
+            <button onClick={ handleClickIsOpen } className={`text-left w-full flex flex-row cursor-pointer ${isOpen ? "text-blue-400" : "text-blue-300"} `}>
                 {  
-                    isOpen ? <ArrowUpIcon /> : <ArrowDownIcon />
+                    isOpen ? <TreeArrowRight /> : <TreeArrowLeft />
+
                 }
 
                 {props.name}
@@ -46,7 +47,7 @@ export const SearchFoundsItem: React.FC<ILinkItemProps> = (props) => {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="pl-4 pt-2 w-full flex flex-col gap-2 overflow-hidden"
+                className="pl-8 pt-2 w-full flex flex-col gap-2 overflow-hidden"
                 >
                 {props.children.map((link) => (
                     <SearchFoundsItem key={`${link.id}-${link.name}`} {...link} />
