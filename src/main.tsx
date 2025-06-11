@@ -19,4 +19,3 @@ createRoot(document.getElementById('root')!).render(
 );
 
 
-console.log(import.meta.env.VITE_ENABLE_STRICT_MODE)

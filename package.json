@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "public": "vite -- --host"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
@@ -16,7 +15,7 @@
     "dompurify": "^3.2.6",
     "framer-motion": "^12.9.2",
     "highlight.js": "^11.11.1",
-    "jotai": "^2.12.3",
+    "jotai": "^2.12.5",
     "marked": "^15.0.12",
     "motion": "^12.16.0",
     "react": "^19.0.0",

@@ -16,3 +16,4 @@ export const linkAtom = atom({
 
 export const openGroupsAtom = atom<number[]>([]); 
 
+export const openIdsAtom = atom<number[]>([]);

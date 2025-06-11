@@ -1,35 +1,29 @@
-
 import { Input } from "@/shared/components/ui/input"
-import { useSetAtom } from "jotai";
+import { useAtom } from "jotai";
+import { useCallback } from "react";
 
 import { searchValueAtom } from "../store/search-value.store";
-import { useCallback, useEffect, useState } from "react";
-
 
 export const SearchField: React.FC = () => {
-    const setSearchValue = useSetAtom(searchValueAtom);
-    const [inputValue, setInputValue] = useState("");
+    const [searchValue, setSearchValue] = useAtom(searchValueAtom);
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setSearchValue(inputValue);
-        }, 300); 
-
-        return () => clearTimeout(timeout);
-    }, [inputValue, setSearchValue]);
-
-
-    const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setInputValue(e.target.value), []);
+    const handleOnChange = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            setSearchValue(e.target.value);
+        },
+        [setSearchValue]
+    );
 
     return (
         <div className="flex items-center justify-center gap-3 w-full">
             <Input 
-                value={inputValue}
-                onChange={(e) => handleOnChange(e)}
+                value={searchValue}
+                onChange={handleOnChange}
                 placeholder="Поиск по документации"
                 className="w-full h-10"
             />
         </div>
     );
-}
+};
+
 

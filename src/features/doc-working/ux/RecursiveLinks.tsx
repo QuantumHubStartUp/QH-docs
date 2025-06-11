@@ -3,13 +3,14 @@ import { ILinkItem } from "@/entities/link.entities";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 
-import { useAtom } from "jotai";
+import { useAtom, useSetAtom } from "jotai";
 import { isSidebarOpenAtom } from "../../../shared/store/side-bar.store";
 import { shortNamePath } from "@/shared/utils/shortText.utils";
 import { LinkUI } from "@/shared/components/ui/LinkUI";
 import { ArrowDownIcon, ArrowUpIcon } from "@/shared/components/icons";
+import { openIdsAtom } from "../store/link.store";
 
 
 
@@ -19,9 +20,9 @@ interface RecursiveLinksProps {
 }
 
 export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
-    const [openIds, setOpenIds] = useState<number[]>([]);
+    const [openIds, setOpenIds] = useAtom<number[]>(openIdsAtom);
 
-    const [ , setIsSidebarOpen ] = useAtom(isSidebarOpenAtom)
+    const setIsSidebarOpen = useSetAtom(isSidebarOpenAtom)
 
     const toggleOpen = (id: number) => {
       setOpenIds((prev) =>
