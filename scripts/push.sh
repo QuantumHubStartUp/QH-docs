@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 bun run lint
 bun run format
 
