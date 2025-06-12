@@ -10,7 +10,9 @@ import { PATHS } from "@/config/paths-app.data";
 
 import { Suspense } from "react";
 import { Loading } from "@/shared/components/ui/Loading";
-import { ThemeTest, useTheme } from "@/features/theme";
+import { ThemePreview, useTheme } from "@/features/theme";
+import { isDev } from "@/config/env";
+import { NotFound } from "@/shared/components/widgets/NotFound";
 
 
 
@@ -24,12 +26,16 @@ function App() {
   return (
     <Layout>
       <Suspense fallback={<Loading />}>
-        <ThemeTest />
+        
         <Routes>
           {paths.map(({ path, component: Component }) => (
             <Route key={path} path={path} element={<Component />} />
           ))}
+          <Route path="*" element={ <NotFound /> } />
+          { isDev && <Route path="/colors" element={<ThemePreview />} />}
         </Routes>
+
+        
       </Suspense>
     </Layout>
   )

@@ -19,12 +19,13 @@ export const SideBarController: React.FC = () => {
 
     return (
         <button
+            className=" hover:cursor-pointer"
             onClick={toggleSidebar}
         >
             {isSidebarOpen ? (
-                <span className="text-gray-300 hover:cursor-pointer"><CrossIcon /></span>
+                <span className=" hover:cursor-pointer"><CrossIcon /></span>
             ) : (
-                <span className="text-gray-300 hover:cursor-pointer"><MenuIcon /></span>
+                <span className=" hover:cursor-pointer"><MenuIcon /></span>
             )}
         </button>
     )

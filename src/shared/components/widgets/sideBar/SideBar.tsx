@@ -40,9 +40,9 @@ export const SideBar = () => {
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className={`fixed top-0 left-0 h-full w-[320px] flex flex-col text-white bg-black/80 backdrop-blur-md shadow-md ${ELayoutCSS.LEVEL_3}`} // <-- фиксированная позиция
+          className={`fixed top-0 left-0 h-full w-[320px] flex flex-col bg-black/80 backdrop-blur-md shadow-md ${ELayoutCSS.LEVEL_3}`} // <-- фиксированная позиция
         >
-          <div className="flex items-center justify-between h-16 bg-gray-900 px-4 ">
+          <div className="flex items-center text-white justify-between h-16 bg-gray-900 px-4 ">
             <Logo title="QH DOCS" />
             <ThemeToggleBtn />
             <SideBarController />

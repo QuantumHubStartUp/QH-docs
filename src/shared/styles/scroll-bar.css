@@ -46,8 +46,8 @@ html, body {
 
 
 html.dark ::-webkit-scrollbar {
-    width: 10px; /* Ширина */
-    height: 10px; /* Высота */
+    width: 5px; /* Ширина */
+    height: 5px; /* Высота */
 }
 
 /* Полоса скроллбара */
@@ -66,6 +66,6 @@ html.dark ::-webkit-scrollbar-track {
 
 /* Необязательные стили для кнопок прокрутки (не поддерживается в Safari) */
 html.dark ::-webkit-scrollbar-button {
-    background-color: rgb(40, 243, 226); /* Цвет кнопок */
-    box-shadow: 0px 0px 5px 1px rgb(40, 243, 226);
+    background-color: aliceblue; /* Цвет кнопок */
+    box-shadow: 0px 0px 5px 1px aliceblue;
 }

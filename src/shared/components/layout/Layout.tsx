@@ -12,9 +12,9 @@ interface ILayoutProps extends React.HTMLProps<HTMLDivElement> {
 
 export const Layout: React.FC<ILayoutProps> = ({ children, ...props }) => {
     return (
-        <div {...props} className="flex flex-col min-h-screen bg-linear-to-r from-cyan-500 to-gray-500 text-white">
+        <div {...props} className="flex flex-col min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] dark:bg-[var(--color-surface)] dark:text-[var(--color-text)]"> 
             <Header />
-            <div className="flex flex-row flex-1">
+            <div className="flex flex-row flex-1 mt-5">
                 <SideBar />
                 <Container>
                     { children }
@@ -26,3 +26,4 @@ export const Layout: React.FC<ILayoutProps> = ({ children, ...props }) => {
         </div>
     );
 }
+

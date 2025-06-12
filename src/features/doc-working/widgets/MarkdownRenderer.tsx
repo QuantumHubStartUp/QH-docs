@@ -31,76 +31,7 @@ interface MarkdownRendererProps {
 }
 
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
-  // const [htmlContent, setHtmlContent] = useState<string>("");
-   
-  // // для загрузки
-  // useEffect(() => {
-  //   const controller = new AbortController();
 
-  //   const fetchMd = async () => {
-  //     try {
-  //       const fixMarkdownUrl = markdownUrl.replace('/src/assets/docs', '/docs/docs')
-  //       const res = await fetch(fixMarkdownUrl);
-  //       const md: string = await res.text();
-  //       const dirty: string = await marked(md);
-  //       const clean: string = DOMPurify.sanitize(dirty);
-  //       setHtmlContent(clean);
-  //     } catch (error) {
-  //       console.error("Ошибка загрузки Markdown:", error);
-  //     }
-  //   };
-
-    
-  //   fetchMd();
-    
-  //   return () => controller.abort();
-  // }, [markdownUrl]);
-
-  
-
-  // // для синтаксиса стилизации
-  // useEffect(() => {
-  //   const hljs = renderStyleCode();
-  //   const codeBlocks = document.querySelectorAll("pre code");
-  //   codeBlocks.forEach((block) => hljs.highlightElement(block as HTMLElement));
-  // }, [htmlContent]);
-
-  
-
-
-  // // для копирования
-  // useEffect(() => {
-  //   const preBlocks = document.querySelectorAll("pre");
-  //   const addedButtons: HTMLElement[] = [];
-
-  //   preBlocks.forEach((block) => {
-  //     if (!block.querySelector(".copy-btn")) {
-  //       const button = document.createElement("button");
-  //       button.textContent = "📋 Copy";
-  //       button.className = "copy-btn";
-  //       button.style.cssText = "position: absolute; right: 1rem; top: 0.5rem; cursor: pointer;";
-  //       button.onclick = () => {
-  //         navigator.clipboard.writeText(block.innerText);
-  //         button.textContent = "Copied!";
-  //         const timeout = setTimeout(() => {
-  //           button.textContent = "📋 Copy";
-  //         }, 500);
-  //         button.dataset.timeoutId = timeout.toString();
-  //       };
-  //       block.style.position = "relative";
-  //       block.appendChild(button);
-  //       addedButtons.push(button);
-  //     }
-  //   });
-
-  //   return () => {
-  //     addedButtons.forEach((btn) => {
-  //       const id = btn.dataset.timeoutId;
-  //       if (id) clearTimeout(parseInt(id));
-  //       btn.remove();
-  //     });
-  //   };
-  // }, [htmlContent]);
 
 
   const htmlContent = useMarkdownLoader(markdownUrl);
@@ -111,7 +42,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl 
 
   return (
     <div
-      className="prose prose-slate max-w-none"
+      className="prose prose-slate max-w-none text-[var(--color-text) dark:text-[var(--color-text)]"
       dangerouslySetInnerHTML={{ __html: htmlContent }}
     />
   );
