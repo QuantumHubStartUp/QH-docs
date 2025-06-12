@@ -15,6 +15,9 @@ import { Search } from "@/features/search";
 
 import { lazy, Suspense, useMemo } from 'react';
 import { Loading } from "../../ui/Loading";
+import { ThemeToggleBtn } from "@/features/theme";
+
+
 
 const DocLinksRenderLazy = lazy(() => import('@/features/doc-working/widgets/DocLinksRender'));
 
@@ -41,11 +44,13 @@ export const SideBar = () => {
         >
           <div className="flex items-center justify-between h-16 bg-gray-900 px-4 ">
             <Logo title="QH DOCS" />
+            <ThemeToggleBtn />
             <SideBarController />
           </div>
 
           <nav className="flex flex-col p-4 overflow-y-auto gap-4 ">
             <Search />
+            
 
             <Suspense fallback={<Loading />}>
               <DocLinksRenderMemo />

@@ -1,0 +1,12 @@
+
+/* Светлая тема */
+:root {
+  /* --color-bg: #ffffff; */
+  /* --color-text: #1f2937; */
+}
+
+/* Темная тема */
+.dark {
+  /* --color-bg: #1a202c; */
+  /* --color-text: #f7fafc; */
+}
