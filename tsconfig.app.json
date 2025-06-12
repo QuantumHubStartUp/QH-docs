@@ -34,11 +34,8 @@
       "@widgets/*": ["src/shared/components/widgets/*"],
       "@types/*": ["src/shared/types/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["src/shared/components/*"],
-    },
-
+      "@components/*": ["src/shared/components/*"]
+    }
   },
   "include": ["src"]
-
-
 }

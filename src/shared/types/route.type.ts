@@ -1,7 +1,7 @@
-import { ComponentType, LazyExoticComponent } from "react";
+import { ComponentType, LazyExoticComponent } from 'react';
 
 export type TRoute = {
-    name: string;
-    path: string;
-    component: LazyExoticComponent<ComponentType>;
+  name: string;
+  path: string;
+  component: LazyExoticComponent<ComponentType>;
 };

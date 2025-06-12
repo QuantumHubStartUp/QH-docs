@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const colors = [
   { name: '--color-bg', label: 'Background' },
@@ -8,7 +8,7 @@ const colors = [
   { name: '--color-primary', label: 'Primary' },
   { name: '--color-accent', label: 'Accent' },
   { name: '--color-border', label: 'Border' },
-]
+];
 
 export const ThemePreview: React.FC = () => {
   return (
@@ -22,9 +22,7 @@ export const ThemePreview: React.FC = () => {
           <div className="p-4">
             <div className="text-sm font-semibold">{label}</div>
             <div className="text-xs opacity-80">{name}</div>
-            <div className="mt-2 text-sm">
-              Sample text on {label.toLowerCase()}.
-            </div>
+            <div className="mt-2 text-sm">Sample text on {label.toLowerCase()}.</div>
           </div>
         </div>
       ))}
@@ -38,10 +36,10 @@ export const ThemePreview: React.FC = () => {
             color: 'var(--color-button-text)',
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-button-hover-bg)'
+            e.currentTarget.style.backgroundColor = 'var(--color-button-hover-bg)';
           }}
           onMouseOut={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--color-button-bg)'
+            e.currentTarget.style.backgroundColor = 'var(--color-button-bg)';
           }}
         >
           Primary Button
@@ -57,15 +55,15 @@ export const ThemePreview: React.FC = () => {
             color: 'var(--color-link)',
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.color = 'var(--color-link-hover)'
+            e.currentTarget.style.color = 'var(--color-link-hover)';
           }}
           onMouseOut={(e) => {
-            e.currentTarget.style.color = 'var(--color-link)'
+            e.currentTarget.style.color = 'var(--color-link)';
           }}
         >
           Example link
         </a>
       </div>
     </div>
-  )
-}
+  );
+};

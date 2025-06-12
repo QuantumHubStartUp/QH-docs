@@ -1,32 +1,16 @@
-
-import { ILinkGroup, ILinkItem } from "@/entities/link.entities";
-
-
-
-
-
-
-
+import { ILinkGroup, ILinkItem } from '@/entities/link.entities';
 
 // export const pathAssetsOfDocs = "/src/assets/docs";
-
-
-
 
 export const docs: Record<string, string> = import.meta.glob(`/src/assets/docs/**/*.md`, {
   eager: true,
   import: 'default',
 });
 
-export const docsUrls: Record<string, string> = import.meta.glob(
-  '/src/assets/docs/**/*.md',
-  {
-    eager: true,
-    import: 'default',
-  }
-);
-
-
+export const docsUrls: Record<string, string> = import.meta.glob('/src/assets/docs/**/*.md', {
+  eager: true,
+  import: 'default',
+});
 
 export const toUrl = (path: string): string | null => {
   // const mod = docsUrls[path];
@@ -35,53 +19,40 @@ export const toUrl = (path: string): string | null => {
   // // Если это модуль, берем из default путь
   // const url = hasDefault(mod) ? mod.default : mod;
 
-  return path
-    .replace('/src/assets/docs', '/docs')
-    .replace(/\.md$/, '')
-
+  return path.replace('/src/assets/docs', '/docs').replace(/\.md$/, '');
 };
 
 // export const toUrl = (path: string) => {
 //   console.log()
 //   return docsUrls[path]
 // }
-  
-    // ?.replace('/src/assets/docs', '/docs') // или '/assets/docs'
-    // ?.replace(/\.md$/, '');
 
+// ?.replace('/src/assets/docs', '/docs') // или '/assets/docs'
+// ?.replace(/\.md$/, '');
 
 // export const toUrl = (path: string) => {
- 
+
 //   return docsUrls[path]
 // }
-  
-    // .replace('/src/assets/docs', '/docs')
-    // .replace(/\.md$/, '');
 
+// .replace('/src/assets/docs', '/docs')
+// .replace(/\.md$/, '');
 
-const toName = (segment: string) =>
-  segment.charAt(0).toUpperCase() + segment.slice(1);
+const toName = (segment: string) => segment.charAt(0).toUpperCase() + segment.slice(1);
 
 type IRootItem = {
-  
   __children: IRoot;
   __url: string | null;
-  
-}
+};
 interface IRoot {
-  [key: string]: IRootItem
+  [key: string]: IRootItem;
 }
-
-
 
 function buildTree(paths: string[]): ILinkItem[] {
   const root: IRoot = {}; // временная структура
-  
 
   for (const path of paths) {
-    const relativePath = path
-      .replace('/src/assets/docs/', '')
-      .replace(/\.md$/, '');
+    const relativePath = path.replace('/src/assets/docs/', '').replace(/\.md$/, '');
     const segments = relativePath.split('/');
 
     let current = root;
@@ -116,11 +87,8 @@ function buildTree(paths: string[]): ILinkItem[] {
     });
   }
 
-
-
   return toLinks(root);
 }
-
 
 export const linksData: ILinkGroup[] = [
   {
@@ -139,9 +107,9 @@ export const linksData: ILinkGroup[] = [
       },
       {
         id: 3,
-        name: "Github Документация",
-        url: "https://github.com/freyzan2006/qh-docs",
-      }
+        name: 'Github Документация',
+        url: 'https://github.com/freyzan2006/qh-docs',
+      },
     ],
   },
   {
@@ -149,13 +117,7 @@ export const linksData: ILinkGroup[] = [
     name: 'Документация',
     links: buildTree(Object.keys(docs)),
   },
-  
 ];
-
-
-
-
-
 
 // Структура ссылок
 // [
@@ -183,7 +145,6 @@ export const linksData: ILinkGroup[] = [
 //     ]
 //   }
 // ]
-
 
 // Примерная структура:
 
@@ -263,4 +224,3 @@ export const linksData: ILinkGroup[] = [
 //     }
 //   ]
 // }
-

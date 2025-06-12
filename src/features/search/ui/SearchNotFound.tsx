@@ -1,7 +1,3 @@
-
-
 export const SearchNotFound: React.FC = () => {
-    return (
-        <div>Ничего не найдено</div>
-    )
-}
+  return <div>Ничего не найдено</div>;
+};

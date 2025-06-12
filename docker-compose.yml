@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT:-3000}:80'
+    env_file:
+      - ${ENV_FILE:-.env.production}
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL}

@@ -1,11 +1,8 @@
-
 // import hljs from "highlight.js/lib/core";
 // import javascript from "highlight.js/lib/languages/javascript";
 // import typescript from "highlight.js/lib/languages/typescript";
 // import json from "highlight.js/lib/languages/json";
 // import bash from "highlight.js/lib/languages/bash";
-
-
 
 // hljs.registerLanguage("javascript", javascript);
 // hljs.registerLanguage("typescript", typescript);
@@ -14,26 +11,20 @@
 
 // import { renderStyleCode } from "../utils/render-style-code.utils";
 
-
-
-
-import "highlight.js/styles/dark.min.css"; // стиль можно поменять
+import 'highlight.js/styles/dark.min.css'; // стиль можно поменять
 
 // import DOMPurify from "dompurify";
 // import { marked } from "marked";
 // import { useEffect, useState } from "react";
-import { useMarkdownLoader } from "../hooks/useMarkdownLoader.hook";
-import { useCodeHighlight } from "../hooks/useCodeHighlight.hook";
-import { useCopyButtons } from "../hooks/useCopyButtons.hook";
+import { useCodeHighlight } from '../hooks/useCodeHighlight.hook';
+import { useCopyButtons } from '../hooks/useCopyButtons.hook';
+import { useMarkdownLoader } from '../hooks/useMarkdownLoader.hook';
 
 interface MarkdownRendererProps {
   markdownUrl: string; // путь к .md-файлу
 }
 
 export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl }) => {
-
-
-
   const htmlContent = useMarkdownLoader(markdownUrl);
   useCodeHighlight(htmlContent);
   useCopyButtons(htmlContent);
@@ -47,4 +38,3 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdownUrl 
     />
   );
 };
-

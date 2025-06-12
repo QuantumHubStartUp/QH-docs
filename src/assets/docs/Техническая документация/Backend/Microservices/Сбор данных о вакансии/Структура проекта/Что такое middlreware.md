@@ -1,11 +1,10 @@
-
-
 # Что такое middleware
 
-Middleware - это функция, которая 
+Middleware - это функция, которая
 выполняется перед запросом.
 
 Она может выполнять различные действия, такие как:
+
 - Проверка авторизации
 - Проверка токена
 - Логирование
@@ -23,7 +22,7 @@ async def get_user(request: Request):
 login_require_middleware - это middleware, который проверяет авторизацию. Дикоратор @login_require_middleware проверяет авторизацию и если она не проходит, то возвращает ошибку 401.
 Его можно увидеть в `app/middlewares/login_require_middleware.py`
 
----------------------------------------------------
+---
 
 ## Как создать middleware
 
@@ -46,7 +45,3 @@ logging_middleware - это middleware, который логирует запр
 async def get_message(request: Request):
     return {"message": "Hello, World!"}
 ```
-
-
-
-

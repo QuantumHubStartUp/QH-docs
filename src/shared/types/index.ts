@@ -1,6 +1,3 @@
+export { ELayoutCSS } from './layout-css.enum';
 
-
-
-export { ELayoutCSS } from "./layout-css.enum"
-
-export type { TRoute } from "./route.type"
+export type { TRoute } from './route.type';

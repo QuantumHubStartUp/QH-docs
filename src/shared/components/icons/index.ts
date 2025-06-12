@@ -1,10 +1,10 @@
 // icons/index.ts
-export { MenuIcon } from "./common/MenuIcon"
-export { ArrowUpIcon } from "./arrow/ArrowUpIcon"
-export { ArrowDownIcon } from "./arrow/ArrowDownIcon"
-export { CrossIcon } from "./common/CrossIcon"
-export { TreeArrowLeft } from "./arrow/TreeArrowLeft"
-export { TreeArrowRight } from "./arrow/TreeArrowRight"
+export { ArrowDownIcon } from './arrow/ArrowDownIcon';
+export { ArrowUpIcon } from './arrow/ArrowUpIcon';
+export { TreeArrowLeft } from './arrow/TreeArrowLeft';
+export { TreeArrowRight } from './arrow/TreeArrowRight';
+export { CrossIcon } from './common/CrossIcon';
+export { MenuIcon } from './common/MenuIcon';
 
-export { LightThemeIcon } from "./theme/LightThemeIcon"
-export { DarkThemeIcon } from "./theme/DarkThemeIcon"
+export { DarkThemeIcon } from './theme/DarkThemeIcon';
+export { LightThemeIcon } from './theme/LightThemeIcon';

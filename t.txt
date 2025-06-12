@@ -1,0 +1,6 @@
+bun run lint 
+bun run format
+
+git add .
+git commit -m "..."
+git push origin main

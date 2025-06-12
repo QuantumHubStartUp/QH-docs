@@ -1,20 +1,20 @@
 // hooks/useCopyButtons.ts
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export function useCopyButtons(htmlContent: string) {
   useEffect(() => {
     if (!htmlContent) return;
 
-    const preBlocks = document.querySelectorAll("pre");
-    const inlineCodeBlocks = document.querySelectorAll("p code:not(pre code)");
+    const preBlocks = document.querySelectorAll('pre');
+    const inlineCodeBlocks = document.querySelectorAll('p code:not(pre code)');
 
     const addedButtons: HTMLElement[] = [];
 
     // Для блоков кода <pre>
     preBlocks.forEach((block) => {
-      if (!block.querySelector(".copy-btn")) {
+      if (!block.querySelector('.copy-btn')) {
         const button = createCopyButton(() => block.innerText);
-        block.style.position = "relative";
+        block.style.position = 'relative';
         block.appendChild(button);
         addedButtons.push(button);
       }
@@ -22,14 +22,14 @@ export function useCopyButtons(htmlContent: string) {
 
     // Для инлайн-кода <code>
     inlineCodeBlocks.forEach((code) => {
-      if (!code.querySelector(".inline-copy-btn")) {
-        const wrapper = document.createElement("span");
-        wrapper.style.position = "relative";
-        wrapper.style.display = "inline-block";
+      if (!code.querySelector('.inline-copy-btn')) {
+        const wrapper = document.createElement('span');
+        wrapper.style.position = 'relative';
+        wrapper.style.display = 'inline-block';
         code.parentNode?.insertBefore(wrapper, code);
         wrapper.appendChild(code);
 
-        const button = createCopyButton(() => code.textContent || "", true);
+        const button = createCopyButton(() => code.textContent || '', true);
         wrapper.appendChild(button);
         addedButtons.push(button);
       }
@@ -46,12 +46,12 @@ export function useCopyButtons(htmlContent: string) {
 }
 
 function createCopyButton(getText: () => string, isInline = false): HTMLButtonElement {
-  const button = document.createElement("button");
-  button.textContent = "📋";
-  button.className = isInline ? "inline-copy-btn" : "copy-btn";
+  const button = document.createElement('button');
+  button.textContent = '📋';
+  button.className = isInline ? 'inline-copy-btn' : 'copy-btn';
   button.style.cssText = `
     position: absolute;
-    ${isInline ? "right: -1.5rem; top: 0;" : "right: 1rem; top: 0.5rem;"}
+    ${isInline ? 'right: -1.5rem; top: 0;' : 'right: 1rem; top: 0.5rem;'}
     background: transparent;
     border: none;
     cursor: pointer;
@@ -59,9 +59,9 @@ function createCopyButton(getText: () => string, isInline = false): HTMLButtonEl
   `;
   button.onclick = () => {
     navigator.clipboard.writeText(getText());
-    button.textContent = "✅";
+    button.textContent = '✅';
     const timeout = setTimeout(() => {
-      button.textContent = "📋";
+      button.textContent = '📋';
     }, 800);
     button.dataset.timeoutId = timeout.toString();
   };

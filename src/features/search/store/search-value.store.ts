@@ -1,8 +1,3 @@
+import { atom } from 'jotai';
 
-
-import { atom } from 'jotai'
-
-
-
-export const searchValueAtom = atom('')
-
+export const searchValueAtom = atom('');

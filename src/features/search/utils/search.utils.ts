@@ -1,4 +1,4 @@
-import type { ILinkGroup, ILinkItem } from "@/entities/link.entities";
+import type { ILinkGroup, ILinkItem } from '@/entities/link.entities';
 
 /**
  * Поиск элементов по name внутри массива ILinkGroup[]
@@ -7,25 +7,23 @@ import type { ILinkGroup, ILinkItem } from "@/entities/link.entities";
  * @returns массив найденных ILinkItem
  */
 export function searchByName(groups: ILinkGroup[], searchTerm: string): ILinkItem[] {
-    const matches: ILinkItem[] = [];
+  const matches: ILinkItem[] = [];
 
-    function traverse(item: ILinkItem) {
-        if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-            matches.push(item);
-        }
-
-        if (Array.isArray(item.children)) {
-            item.children.forEach(traverse);
-        }
+  function traverse(item: ILinkItem) {
+    if (item.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+      matches.push(item);
     }
 
-    groups.forEach(group => {
-        if (Array.isArray(group.links)) {
-            group.links.forEach(traverse);
-        }
-    });
+    if (Array.isArray(item.children)) {
+      item.children.forEach(traverse);
+    }
+  }
 
-    return matches;
+  groups.forEach((group) => {
+    if (Array.isArray(group.links)) {
+      group.links.forEach(traverse);
+    }
+  });
+
+  return matches;
 }
-
-

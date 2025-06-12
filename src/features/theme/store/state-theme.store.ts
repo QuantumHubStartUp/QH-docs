@@ -1,9 +1,5 @@
+import { ThemeType } from '../types/theme-type';
 
+import { atomWithStorage } from 'jotai/utils';
 
-
-import { ThemeType } from '../types/theme-type'
-
-import { atomWithStorage } from 'jotai/utils'
-
-
-export const stateThemeAtom = atomWithStorage<ThemeType>("theme", "light");
+export const stateThemeAtom = atomWithStorage<ThemeType>('theme', 'light');

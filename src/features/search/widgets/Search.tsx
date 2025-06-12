@@ -1,12 +1,10 @@
+import { searchValueAtom } from '../store/search-value.store';
+import { SearchField } from '../ux/SearchField';
 
-import { searchValueAtom } from "../store/search-value.store";
-import { SearchField } from "../ux/SearchField"
+import { useAtom } from 'jotai';
+import { SearchResults } from './SearchResults';
 
-import { useAtom } from "jotai";
-import { SearchResults } from "./SearchResults";
-
-import { AnimatePresence, motion } from "framer-motion";
-
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const Search: React.FC = () => {
   const [searchValue] = useAtom(searchValueAtom);
