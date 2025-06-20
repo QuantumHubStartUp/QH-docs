@@ -1,4 +1,5 @@
 import type { ILinkGroup, ILinkItem } from '@/entities/link.entities';
+import { TSearchCopyItem } from '../types/search.type';
 
 /**
  * Поиск элементов по name внутри массива ILinkGroup[]
@@ -27,3 +28,15 @@ export function searchByName(groups: ILinkGroup[], searchTerm: string): ILinkIte
 
   return matches;
 }
+
+/**
+ * Форматирует TSearchCopyItem[] в строку для копирования
+ * @param items массив TSearchCopyItem
+ * @returns строка для копирования
+ */
+export const collectUrls = (items: TSearchCopyItem[], baseUrl: string): string[] => {
+  return items.flatMap((item) => [
+    ...(item.url ? [baseUrl + item.url] : []),
+    ...(item.children ? collectUrls(item.children, baseUrl) : []),
+  ]);
+};

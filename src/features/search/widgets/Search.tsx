@@ -5,6 +5,7 @@ import { useAtom } from 'jotai';
 import { SearchResults } from './SearchResults';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import { SearchCopy } from '../ux/SearchCopy';
 
 export const Search: React.FC = () => {
   const [searchValue] = useAtom(searchValueAtom);
@@ -12,6 +13,7 @@ export const Search: React.FC = () => {
   return (
     <div className="p-3 w-full flex flex-col items-center gap-3 bg-blue-300/10 backdrop-blur-md shadow-md rounded-xl">
       <SearchField />
+      <SearchCopy />
       <hr className="w-full text-blue-500" />
 
       <AnimatePresence>

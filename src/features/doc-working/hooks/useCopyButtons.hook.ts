@@ -6,7 +6,6 @@ export function useCopyButtons(htmlContent: string) {
     if (!htmlContent) return;
 
     const preBlocks = document.querySelectorAll('pre');
-    const inlineCodeBlocks = document.querySelectorAll('p code:not(pre code)');
 
     const addedButtons: HTMLElement[] = [];
 
@@ -16,21 +15,6 @@ export function useCopyButtons(htmlContent: string) {
         const button = createCopyButton(() => block.innerText);
         block.style.position = 'relative';
         block.appendChild(button);
-        addedButtons.push(button);
-      }
-    });
-
-    // Для инлайн-кода <code>
-    inlineCodeBlocks.forEach((code) => {
-      if (!code.querySelector('.inline-copy-btn')) {
-        const wrapper = document.createElement('span');
-        wrapper.style.position = 'relative';
-        wrapper.style.display = 'inline-block';
-        code.parentNode?.insertBefore(wrapper, code);
-        wrapper.appendChild(code);
-
-        const button = createCopyButton(() => code.textContent || '', true);
-        wrapper.appendChild(button);
         addedButtons.push(button);
       }
     });
