@@ -19,7 +19,11 @@ export const toUrl = (path: string): string | null => {
   // // Если это модуль, берем из default путь
   // const url = hasDefault(mod) ? mod.default : mod;
 
-  return path.replace('/src/assets/docs', '/docs').replace(/\.md$/, '');
+  return path
+    .replace('/src/assets/docs', '/docs')
+    .replace(/\.md$/, '')
+    .replace(/\s+/g, '-')
+    .replace(/\s+/g, '_');
 };
 
 // export const toUrl = (path: string) => {
@@ -83,6 +87,7 @@ function buildTree(paths: string[]): ILinkItem[] {
         ...(value.__url ? { url: value.__url } : {}),
         ...(children.length ? { children } : {}),
       };
+
       return link;
     });
   }

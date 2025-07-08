@@ -2,13 +2,19 @@ import { lazy, Suspense } from 'react';
 
 import { Loading } from '@/shared/components/ui/Loading';
 
+
 const HereLazy = lazy(() => import('./components/Here'));
+const FqLinksLazy = lazy(() => import('@features/frequent-links/components/widgets/FqLinks'));
 
 const HomePage = () => {
   return (
-    <main className="flex flex-row items-center justify-center">
+    <main className="flex flex-col items-center justify-center">
       <Suspense fallback={<Loading />}>
         <HereLazy />
+      </Suspense>
+
+      <Suspense fallback={<Loading />}>
+        <FqLinksLazy />
       </Suspense>
     </main>
   );
