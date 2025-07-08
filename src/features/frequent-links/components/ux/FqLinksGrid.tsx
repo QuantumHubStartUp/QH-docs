@@ -1,3 +1,4 @@
+import { memo } from "react"
 import { oftenLinks } from "../../data/often-links.data"
 import { FqLinksCard } from "./FqLinksCard"
 
@@ -5,9 +6,10 @@ import { FqLinksCard } from "./FqLinksCard"
 
 
 
-export const FqLinksGrid = () => {
+export const FqLinksGrid = memo(() => {
     return (
         <div className="flex flex-wrap gap-4 justify-center">
+            
             {
                 oftenLinks.map((link) => (
                     <FqLinksCard key={`${link.id}-${link.name}`} {...link} />
@@ -15,4 +17,4 @@ export const FqLinksGrid = () => {
             }
         </div>
     )
-}
+})

@@ -1,10 +1,15 @@
 import { IFrequentLink } from "@/entities/frequent-links.entities"
 import { CardBody, CardContainer, CardItem } from "@/shared/components/ui/3d-card"
 
+import { memo } from "react"
 
 
-export const FqLinksCard: React.FC<IFrequentLink> = ({ id, name, description, url, image }) => {
+
+
+
+export const FqLinksCard: React.FC<IFrequentLink> = memo(({ id, name, description, url, image }) => {
     return (
+        
         <CardContainer className="inter-var max-w-[25rem] w-full">
             <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
                 <CardItem
@@ -39,6 +44,8 @@ export const FqLinksCard: React.FC<IFrequentLink> = ({ id, name, description, ur
                 >
                     Подробнеи →
                 </CardItem>
+
+            
                 <CardItem
                     translateZ={20}
                     as="button"
@@ -49,5 +56,6 @@ export const FqLinksCard: React.FC<IFrequentLink> = ({ id, name, description, ur
                 </div>
             </CardBody>
         </CardContainer>
+        
     )
-}
+})
