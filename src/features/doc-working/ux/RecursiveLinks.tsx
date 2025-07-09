@@ -11,6 +11,9 @@ import { useAtom, useSetAtom } from 'jotai';
 import { isSidebarOpenAtom } from '../../../shared/store/side-bar.store';
 import { openIdsAtom } from '../store/link.store';
 
+import { IHistoryLink } from '@entities/history-links.entities';
+import { useHistoryLinksPush } from '@features/history-links';
+
 interface RecursiveLinksProps {
   links: ILinkItem[];
   openItems?: number[];
@@ -21,13 +24,18 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
 
   const setIsSidebarOpen = useSetAtom(isSidebarOpenAtom);
 
+  const [ historyLinksPush ] = useHistoryLinksPush();
+
   const toggleOpen = (id: number) => {
     setOpenIds((prev) =>
       prev.includes(id) ? prev.filter((openId) => openId !== id) : [...prev, id],
     );
   };
 
-  const handleCloseSidebar = useCallback(() => setIsSidebarOpen(false), [setIsSidebarOpen]);
+  const handleCloseSidebar = useCallback((link: IHistoryLink) => {
+    setIsSidebarOpen(false)
+    historyLinksPush(link)
+  }, [setIsSidebarOpen, historyLinksPush]);
 
   return (
     <ul className="flex flex-col  gap-3 pl-2 pt-2">
@@ -35,7 +43,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         <li key={link.id}>
           {link.url ? (
             <LinkUI
-              onClick={handleCloseSidebar}
+              onClick={() => handleCloseSidebar({  id: link.id, name: link.name, url: link.url })}
               to={link.url}
               className="text-blue-400"
               title={link.name}

@@ -6,6 +6,7 @@ import React, {
   useRef,
   useEffect,
   useCallback,
+  memo,
 } from "react";
 
 
@@ -15,7 +16,7 @@ import { cn } from "@shared/lib/utils";
 import { MouseEnterProvider } from "@shared/hooks/mouse/mouse-enter";
 import { useMouseEnter } from "@shared/hooks/mouse/use-mouse-enter.hook";
 
-export const CardContainer = ({
+export const CardContainer = memo(({
   children,
   className,
   containerClassName,
@@ -31,7 +32,7 @@ export const CardContainer = ({
       </InnerCardContainer>
     </MouseEnterProvider>
   );
-};
+});
 
 const InnerCardContainer = ({
   children,
