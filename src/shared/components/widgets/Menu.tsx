@@ -1,4 +1,4 @@
-import { externalLinks, PATHS } from '@/config/paths-app.data';
+import { externalLinks, PATHS } from '@config/paths-app.data';
 import { LinkUI } from '../ui/LinkUI';
 
 export const Menu = () => {

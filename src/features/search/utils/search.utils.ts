@@ -1,4 +1,4 @@
-import type { ILinkGroup, ILinkItem } from '@/entities/link.entities';
+import type { ILinkGroup, ILinkItem } from '@entities/link.entities';
 import { TSearchCopyItem } from '../types/search.type';
 
 /**

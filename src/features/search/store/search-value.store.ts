@@ -1,4 +1,4 @@
-import { ILinkItem } from '@/entities/link.entities';
+import { ILinkItem } from '@entities/link.entities';
 import { atom } from 'jotai';
 
 export const searchValueAtom = atom('');
