@@ -1,4 +1,4 @@
-import { ILinkGroup, ILinkItem } from '@/entities/link.entities';
+import { ILinkGroup, ILinkItem } from '@entities/link.entities';
 
 // export const pathAssetsOfDocs = "/src/assets/docs";
 

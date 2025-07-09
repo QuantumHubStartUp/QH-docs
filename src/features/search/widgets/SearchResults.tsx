@@ -1,6 +1,6 @@
 import { useAtomValue, useSetAtom } from 'jotai';
 
-import { linkAtom } from '@/features/doc-working';
+import { linkAtom } from '@features/doc-working';
 import { searchByName } from '../utils/search.utils';
 import { SearchFoundsItem } from '../ux/SearchFoundsItem';
 

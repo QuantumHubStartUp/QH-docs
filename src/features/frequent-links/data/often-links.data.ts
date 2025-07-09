@@ -1,11 +1,11 @@
-import { ConfigApp } from "@/config/config-app";
-import { IFrequentLink } from "@/entities/frequent-links.entities";
+import { ConfigApp } from "@config/config-app";
+import { IFrequentLink } from "@entities/frequent-links.entities";
 
 
 const host = ConfigApp.APP_URL;
 
 
-export const oftenLinks: IFrequentLink[] = [
+export const oftenLinksData: IFrequentLink[] = [
     {
         id: 1, 
         name: 'Что за проект ?',
@@ -29,7 +29,7 @@ export const oftenLinks: IFrequentLink[] = [
     },
     {
         id: 4,
-        name: "Техническое задание",
+        name: "Техническое задание ?",
         url: `${host}/docs/О_проекте/Техническое-задания`,
         image: "/frequent-links/4.jpg",
         description: "Техническое задание проекта"

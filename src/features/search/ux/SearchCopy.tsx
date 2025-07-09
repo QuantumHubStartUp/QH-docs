@@ -1,20 +1,5 @@
-// import { useAtomValue } from "jotai";
-// import { searchFoundAtom, searchValueAtom } from "../store/search-value.store";
-// import { CopyButton } from "@/shared/components/ux";
-// import { linkAtom } from "@/features/doc-working";
-
-// export const SearchCopy: React.FC = () => {
-//     const searchValue = useAtomValue(searchValueAtom);
-//     const linkState = useAtomValue(linkAtom);
-//     const searchFound = useAtomValue(searchFoundAtom);
-
-//     console.log(searchFound);
-
-//     return <CopyButton text={""} label={ searchValue } />;
-// };
-
-import { CopyButton } from '@/shared/components/ux';
-import { shortNamePath } from '@/shared/utils/shortText.utils';
+import { CopyButton } from '@components/ux';
+import { shortNamePath } from '@utils/shortText.utils';
 import { useAtomValue } from 'jotai';
 import { useMemo } from 'react';
 import { searchFoundAtom, searchValueAtom } from '../store/search-value.store';

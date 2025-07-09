@@ -1,8 +1,8 @@
-import { Input } from '@/shared/components/ui/input';
+import { Input } from '@components/ui/input';
 import { useAtom } from 'jotai';
 import { useEffect, useState } from 'react';
 
-import { useDebouncedValue } from '@/shared/hooks/useDebouncedValue.hook';
+import { useDebouncedValue } from '@shared/hooks/useDebouncedValue.hook';
 import { searchValueAtom } from '../store/search-value.store';
 
 export const SearchField: React.FC = () => {

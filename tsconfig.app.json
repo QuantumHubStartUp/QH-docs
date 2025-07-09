@@ -24,7 +24,6 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
       "@features/*": ["src/features/*"],
       "@shared/*": ["src/shared/*"],
       "@database/*": ["src/database/*"],
@@ -34,7 +33,11 @@
       "@widgets/*": ["src/shared/components/widgets/*"],
       "@types/*": ["src/shared/types/*"],
       "@assets/*": ["assets/*"],
-      "@components/*": ["src/shared/components/*"]
+      "@components/*": ["src/shared/components/*"],
+      "@config/*": ["src/config/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@store/*": ["src/shared/store/*"],
+      "@pages/*": ["src/app/pages/*"]
     }
   },
   "include": ["src"]

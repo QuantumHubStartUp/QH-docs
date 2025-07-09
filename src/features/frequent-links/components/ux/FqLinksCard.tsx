@@ -1,5 +1,5 @@
-import { IFrequentLink } from "@/entities/frequent-links.entities"
-import { CardBody, CardContainer, CardItem } from "@/shared/components/ui/3d-card"
+import { IFrequentLink } from "@entities/frequent-links.entities"
+import { CardBody, CardContainer, CardItem } from "@shared/components/ui/3d-card"
 
 import { memo } from "react"
 

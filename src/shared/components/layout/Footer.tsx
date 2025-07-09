@@ -1,4 +1,4 @@
-import { ELayoutCSS } from '@/shared/types';
+import { ELayoutCSS } from '@shared/types';
 
 export const Footer: React.FC = () => {
   return (

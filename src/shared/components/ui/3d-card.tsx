@@ -9,11 +9,11 @@ import React, {
 } from "react";
 
 
-import { cn } from "@/shared/lib/utils";
+import { cn } from "@shared/lib/utils";
 
 
-import { MouseEnterProvider } from "@/shared/hooks/mouse/mouse-enter";
-import { useMouseEnter } from "@/shared/hooks/mouse/use-mouse-enter.hook";
+import { MouseEnterProvider } from "@shared/hooks/mouse/mouse-enter";
+import { useMouseEnter } from "@shared/hooks/mouse/use-mouse-enter.hook";
 
 export const CardContainer = ({
   children,

@@ -1,12 +1,12 @@
-import { ILinkItem } from '@/entities/link.entities';
+import { ILinkItem } from '@entities/link.entities';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { useCallback } from 'react';
 
-import { ArrowDownIcon, ArrowUpIcon } from '@/shared/components/icons';
-import { LinkUI } from '@/shared/components/ui/LinkUI';
-import { shortNamePath } from '@/shared/utils/shortText.utils';
+import { ArrowDownIcon, ArrowUpIcon } from '@components/icons';
+import { LinkUI } from '@components/ui/LinkUI';
+import { shortNamePath } from '@utils/shortText.utils';
 import { useAtom, useSetAtom } from 'jotai';
 import { isSidebarOpenAtom } from '../../../shared/store/side-bar.store';
 import { openIdsAtom } from '../store/link.store';

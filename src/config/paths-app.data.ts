@@ -1,21 +1,21 @@
-import { TRoute } from '@/shared/types';
+import { TRoute } from '@shared/types';
 import { lazy } from 'react';
 
 export const PATHS: Record<string, TRoute> = {
   home: {
     name: 'Главная',
     path: '/',
-    component: lazy(() => import('@/app/pages/home/HomePage')),
+    component: lazy(() => import('@pages/home/HomePage')),
   },
   about: {
     name: 'О нас',
     path: '/about',
-    component: lazy(() => import('@/app/pages/about/AboutPage')),
+    component: lazy(() => import('@pages/about/AboutPage')),
   },
   docs: {
     name: 'Документация',
     path: '/docs/*',
-    component: lazy(() => import('@/app/pages/docs/DocsPage')),
+    component: lazy(() => import('@pages/docs/DocsPage')),
   },
 };
 

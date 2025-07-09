@@ -1,8 +1,8 @@
-import { BackgroundGradient } from '@/shared/components/ui/background-gradient';
+import { BackgroundGradient } from '@components/ui/background-gradient';
 import { useGetFileMd } from '../hooks/useGetFileMd.hook';
 
-import { CopyButton } from '@/shared/components/ux';
-import { shortNamePath } from '@/shared/utils/shortText.utils';
+import { CopyButton } from '@components/ux';
+import { shortNamePath } from '@utils/shortText.utils';
 import { useMemo } from 'react';
 import { MarkdownRenderer } from './MarkdownRenderer';
 

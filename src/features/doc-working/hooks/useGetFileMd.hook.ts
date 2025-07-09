@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { findMdPath } from '../utils/findMd.utils';
 
-import { docs } from '@/data/links.data';
+import { docs } from '../data/links.data';
 
 export const useGetFileMd = () => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai';
 
-import { CrossIcon, MenuIcon } from '@/shared/components/icons';
-import { isSidebarOpenAtom } from '@/shared/store/side-bar.store';
+import { CrossIcon, MenuIcon } from '@components/icons';
+import { isSidebarOpenAtom } from '@store/side-bar.store';
 import { useCallback } from 'react';
 
 export const SideBarController: React.FC = () => {

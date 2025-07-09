@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@shared/lib/utils';
 import { motion } from 'motion/react';
 
 export const ThreeDMarquee = ({ images, className }: { images: string[]; className?: string }) => {

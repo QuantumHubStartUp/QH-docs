@@ -3,8 +3,9 @@ import { RecursiveLinks } from '../ux/RecursiveLinks';
 import { useAtom } from 'jotai';
 import { linkAtom, openGroupsAtom } from '../store/link.store';
 
-import { ArrowDownIcon, ArrowUpIcon } from '@/shared/components/icons';
+import { ArrowDownIcon, ArrowUpIcon } from '@components/icons';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ILinkGroup } from '@entities/link.entities';
 
 const DocLinksRender = () => {
   const [linkState] = useAtom(linkAtom);
@@ -18,7 +19,7 @@ const DocLinksRender = () => {
 
   return (
     <>
-      {linkState.links.map((linkGroup) => (
+      {linkState.links.map((linkGroup: ILinkGroup) => (
         <div key={linkGroup.id} className="mb-4">
           <h2
             onClick={() => toggleGroup(linkGroup.id)}

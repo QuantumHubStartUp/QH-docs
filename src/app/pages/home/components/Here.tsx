@@ -1,8 +1,8 @@
 'use client';
 
-import { externalLinks, PATHS } from '@/config/paths-app.data';
-import { ThreeDMarquee } from '@/shared/components/ui/3d-marquee';
-import { ELayoutCSS } from '@/shared/types';
+import { externalLinks, PATHS } from '@config/paths-app.data';
+import { ThreeDMarquee } from '@components/ui/3d-marquee';
+import { ELayoutCSS } from '@shared/types';
 import { Link } from 'react-router-dom';
 
 // const images = [

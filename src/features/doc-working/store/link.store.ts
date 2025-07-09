@@ -1,4 +1,4 @@
-import { linksData } from '@/data/links.data';
+import { linksData } from '../data/links.data';
 
 import { atom } from 'jotai';
 

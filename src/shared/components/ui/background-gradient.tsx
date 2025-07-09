@@ -1,5 +1,5 @@
-import { cn } from '@/shared/lib/utils';
-import { ELayoutCSS } from '@/shared/types';
+import { cn } from '@shared/lib/utils';
+import { ELayoutCSS } from '@shared/types';
 import { motion } from 'motion/react';
 import React from 'react';
 

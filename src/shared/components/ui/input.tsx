@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@shared/lib/utils';
 import { motion, useMotionTemplate, useMotionValue } from 'motion/react';
 
 const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(

@@ -1,6 +1,6 @@
-import { MarkdownRenderer } from '@/features/doc-working';
-import { LinkUI } from '@/shared/components/ui/LinkUI';
-import { Loading } from '@/shared/components/ui/Loading';
+import { MarkdownRenderer } from '@features/doc-working';
+import { LinkUI } from '@components/ui/LinkUI';
+import { Loading } from '@components/ui/Loading';
 import { Suspense } from 'react';
 
 const AboutPage = () => {

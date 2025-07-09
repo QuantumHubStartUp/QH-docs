@@ -3,16 +3,16 @@ import { useAtom } from 'jotai';
 import { isSidebarOpenAtom } from '../../../store/side-bar.store';
 import { SideBarController } from './SideBarController';
 
-import { ELayoutCSS } from '@/shared/types/layout-css.enum';
+import { ELayoutCSS } from '@shared/types/layout-css.enum';
 
-import { Search } from '@/features/search';
-import { Logo } from '@/shared/components/ui/Logo';
+import { Search } from '@features/search';
+import { Logo } from '@shared/components/ui/Logo';
 
-import { ThemeToggleBtn } from '@/features/theme';
+import { ThemeToggleBtn } from '@features/theme';
 import { lazy, Suspense, useMemo } from 'react';
 import { Loading } from '../../ui/Loading';
 
-const DocLinksRenderLazy = lazy(() => import('@/features/doc-working/widgets/DocLinksRender'));
+const DocLinksRenderLazy = lazy(() => import('@features/doc-working/widgets/DocLinksRender'));
 
 export const SideBar = () => {
   const [isSidebarOpen] = useAtom(isSidebarOpenAtom);

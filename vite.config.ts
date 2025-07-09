@@ -9,7 +9,6 @@ import vitePluginString from 'vite-plugin-string';
 export default defineConfig({
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
       '@features': path.resolve(__dirname, './src/features'),
       '@database': path.resolve(__dirname, './src/database'),
       '@app': path.resolve(__dirname, './src/app'),
@@ -20,6 +19,10 @@ export default defineConfig({
       '@types': path.resolve(__dirname, './src/shared/types'),
       '@assets': path.resolve(__dirname, './assets'),
       '@components': path.resolve(__dirname, './src/shared/components'),
+      "@config": path.resolve(__dirname, "./src/config"),
+      "@utils": path.resolve(__dirname, "./src/shared/utils"),
+      "@store": path.resolve(__dirname, "./src/shared/store"),
+      "@pages": path.resolve(__dirname, "./src/app/pages"),
     },
   },
 

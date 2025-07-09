@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 
-import { Loading } from '@/shared/components/ui/Loading';
+import { Loading } from '@components/ui/Loading';
 
 
 const HereLazy = lazy(() => import('./components/Here'));

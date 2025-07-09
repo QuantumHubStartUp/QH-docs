@@ -1,8 +1,8 @@
-import { ILinkItem } from '@/entities/link.entities';
-import { TreeArrowLeft, TreeArrowRight } from '@/shared/components/icons';
+import { ILinkItem } from '@entities/link.entities';
+import { TreeArrowLeft, TreeArrowRight } from '@components/icons';
 
-import { LinkUI } from '@/shared/components/ui/LinkUI';
-import { shortNamePath } from '@/shared/utils/shortText.utils';
+import { LinkUI } from '@components/ui/LinkUI';
+import { shortNamePath } from '@utils/shortText.utils';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { useCallback, useState } from 'react';
