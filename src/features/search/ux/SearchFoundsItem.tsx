@@ -61,26 +61,3 @@ export const SearchFoundsItem: React.FC<ILinkItemProps> = (props) => {
     </li>
   );
 };
-
-// {
-//     "id": 4,
-//     "name": "Graphql",
-//     "url": "/docs/api/graphql"
-// }
-
-// {
-//     "id": 2,
-//     "name": "Api",
-//     "children": [
-//         {
-//             "id": 3,
-//             "name": "Rest",
-//             "url": "/docs/api/rest"
-//         },
-//         {
-//             "id": 4,
-//             "name": "Graphql",
-//             "url": "/docs/api/graphql"
-//         }
-//     ]
-// }
