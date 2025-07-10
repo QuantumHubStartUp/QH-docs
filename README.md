@@ -89,5 +89,18 @@ import { <feature_component> } from "@features/<feature>";
 
 ---
 
+### Deploy изменений:
+
+```bash
+chmod +x ./cmd/deploy.sh
+./cmd/deploy.sh -m "фикс: поправлен хедер"
+```
+
+```bash
+./cmd/deploy.sh -m "docs: обновлено описание" --skip-lint --skip-build
+```
+
+---
+
 ["Сайт"](https://qh-docs.netlify.app/)
 ["GitHub"](https://github.com/Quantum-Hub/QH-docs)
