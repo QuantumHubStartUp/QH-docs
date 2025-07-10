@@ -1,38 +1,31 @@
-"use client";
+'use client';
 
+import React, { memo, useCallback, useEffect, useRef } from 'react';
 
+import { cn } from '@shared/lib/utils';
 
-import React, {
-  useRef,
-  useEffect,
-  useCallback,
-  memo,
-} from "react";
+import { MouseEnterProvider } from '@shared/hooks/mouse/mouse-enter';
+import { useMouseEnter } from '@shared/hooks/mouse/use-mouse-enter.hook';
 
-
-import { cn } from "@shared/lib/utils";
-
-
-import { MouseEnterProvider } from "@shared/hooks/mouse/mouse-enter";
-import { useMouseEnter } from "@shared/hooks/mouse/use-mouse-enter.hook";
-
-export const CardContainer = memo(({
-  children,
-  className,
-  containerClassName,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-  containerClassName?: string;
-}) => {
-  return (
-    <MouseEnterProvider>
-      <InnerCardContainer className={className} containerClassName={containerClassName}>
-        {children}
-      </InnerCardContainer>
-    </MouseEnterProvider>
-  );
-});
+export const CardContainer = memo(
+  ({
+    children,
+    className,
+    containerClassName,
+  }: {
+    children?: React.ReactNode;
+    className?: string;
+    containerClassName?: string;
+  }) => {
+    return (
+      <MouseEnterProvider>
+        <InnerCardContainer className={className} containerClassName={containerClassName}>
+          {children}
+        </InnerCardContainer>
+      </MouseEnterProvider>
+    );
+  },
+);
 
 const InnerCardContainer = ({
   children,
@@ -67,8 +60,8 @@ const InnerCardContainer = ({
 
   return (
     <div
-      className={cn("py-20 flex items-center justify-center", containerClassName)}
-      style={{ perspective: "1000px" }}
+      className={cn('py-20 flex items-center justify-center', containerClassName)}
+      style={{ perspective: '1000px' }}
     >
       <div
         ref={containerRef}
@@ -76,10 +69,10 @@ const InnerCardContainer = ({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         className={cn(
-          "flex items-center justify-center relative transition-all duration-200 ease-linear",
-          className
+          'flex items-center justify-center relative transition-all duration-200 ease-linear',
+          className,
         )}
-        style={{ transformStyle: "preserve-3d" }}
+        style={{ transformStyle: 'preserve-3d' }}
       >
         {children}
       </div>
@@ -97,8 +90,8 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
-        className
+        'h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]',
+        className,
       )}
     >
       {children}
@@ -107,7 +100,7 @@ export const CardBody = ({
 };
 
 export const CardItem = ({
-  as: Tag = "div",
+  as: Tag = 'div',
   children,
   className,
   translateX = 0,
@@ -146,14 +139,8 @@ export const CardItem = ({
   }, [isMouseEntered, handleAnimations]);
 
   return (
-    <Tag
-      ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
-      {...rest}
-    >
+    <Tag ref={ref} className={cn('w-fit transition duration-200 ease-linear', className)} {...rest}>
       {children}
     </Tag>
   );
 };
-
-

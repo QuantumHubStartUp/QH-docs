@@ -2,14 +2,12 @@ import { Layout } from '@components/layout/Layout';
 
 import { Route, Routes } from 'react-router-dom';
 
-
-
 import { PATHS } from '@config/paths-app.data';
 
-import { isDev } from '@config/env';
-import { ThemePreview, useTheme } from '@features/theme';
 import { Loading } from '@components/ui/Loading';
 import { NotFound } from '@components/widgets/NotFound';
+import { isDev } from '@config/env';
+import { ThemePreview, useTheme } from '@features/theme';
 import { Suspense } from 'react';
 
 function App() {

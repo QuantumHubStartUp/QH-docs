@@ -24,7 +24,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
 
   const setIsSidebarOpen = useSetAtom(isSidebarOpenAtom);
 
-  const [ historyLinksPush ] = useHistoryLinksPush();
+  const [historyLinksPush] = useHistoryLinksPush();
 
   const toggleOpen = (id: number) => {
     setOpenIds((prev) =>
@@ -32,10 +32,13 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
     );
   };
 
-  const handleCloseSidebar = useCallback((link: IHistoryLink) => {
-    setIsSidebarOpen(false)
-    historyLinksPush(link)
-  }, [setIsSidebarOpen, historyLinksPush]);
+  const handleCloseSidebar = useCallback(
+    (link: IHistoryLink) => {
+      setIsSidebarOpen(false);
+      historyLinksPush(link);
+    },
+    [setIsSidebarOpen, historyLinksPush],
+  );
 
   return (
     <ul className="flex flex-col  gap-3 pl-2 pt-2">
@@ -43,7 +46,7 @@ export const RecursiveLinks: React.FC<RecursiveLinksProps> = ({ links }) => {
         <li key={link.id}>
           {link.url ? (
             <LinkUI
-              onClick={() => handleCloseSidebar({  id: link.id, name: link.name, url: link.url })}
+              onClick={() => handleCloseSidebar({ id: link.id, name: link.name, url: link.url })}
               to={link.url}
               className="text-blue-400"
               title={link.name}

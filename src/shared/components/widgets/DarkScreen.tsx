@@ -1,7 +1,6 @@
-
+import { isSidebarOpenAtom } from '@store/side-bar.store';
 import { useAtom } from 'jotai';
 import { ELayoutCSS } from '../../types/layout-css.enum';
-import { isSidebarOpenAtom } from '@store/side-bar.store';
 
 export const DarkScreen: React.FC = () => {
   const [isSidebarOpen, setSidebarOpen] = useAtom(isSidebarOpenAtom);

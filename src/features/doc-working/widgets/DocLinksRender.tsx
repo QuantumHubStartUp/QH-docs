@@ -4,8 +4,8 @@ import { useAtom } from 'jotai';
 import { linkAtom, openGroupsAtom } from '../store/link.store';
 
 import { ArrowDownIcon, ArrowUpIcon } from '@components/icons';
-import { AnimatePresence, motion } from 'framer-motion';
 import { ILinkGroup } from '@entities/link.entities';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const DocLinksRender = () => {
   const [linkState] = useAtom(linkAtom);

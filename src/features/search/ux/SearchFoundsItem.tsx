@@ -1,5 +1,5 @@
-import { ILinkItem } from '@entities/link.entities';
 import { TreeArrowLeft, TreeArrowRight } from '@components/icons';
+import { ILinkItem } from '@entities/link.entities';
 
 import { LinkUI } from '@components/ui/LinkUI';
 import { shortNamePath } from '@utils/shortText.utils';

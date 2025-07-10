@@ -1,3 +1,1 @@
-
-
-export { FqLinks } from "./components/widgets/FqLinks";
+export { FqLinks } from './components/widgets/FqLinks';
