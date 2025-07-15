@@ -1,24 +1,34 @@
 import { useDebouncedValue } from '@shared/hooks/useDebouncedValue.hook';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Синхронизирует inputValue с jotai-атомом через debounce
  */
 export const useSyncedInputWithAtom = <T>(atomValue: T, setAtom: (val: T) => void, delay = 300) => {
-  const [inputValue, setInputValue] = useState(() => atomValue);
+  const [inputValue, setInputValue] = useState<T>(atomValue);
   const debouncedInput = useDebouncedValue(inputValue, delay);
+  const isUserInput = useRef(false); // флаг: ввод ли это от пользователя
 
-  useEffect(() => {
-    if (atomValue !== inputValue) {
-      setInputValue(atomValue);
-    }
-  }, [atomValue, inputValue, setInputValue]);
+  // Ставим флаг при ручном вводе
+  const handleChange = (val: T) => {
+    isUserInput.current = true;
+    setInputValue(val);
+  };
 
+  // Синхронизируем с jotai после debounce
   useEffect(() => {
-    if (debouncedInput !== atomValue) {
+    if (isUserInput.current && debouncedInput !== atomValue) {
       setAtom(debouncedInput);
+      isUserInput.current = false;
     }
   }, [debouncedInput, atomValue, setAtom]);
 
-  return [inputValue, setInputValue] as const;
+  // Обновляем inputValue, если atom обновлён извне (не пользователем)
+  useEffect(() => {
+    if (!isUserInput.current && atomValue !== inputValue) {
+      setInputValue(atomValue);
+    }
+  }, [atomValue, inputValue]);
+
+  return [inputValue, handleChange] as const;
 };
