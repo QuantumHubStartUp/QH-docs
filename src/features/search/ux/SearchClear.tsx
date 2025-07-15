@@ -9,7 +9,7 @@ export const SearchClear: React.FC = () => {
 
   const handlerClear = useCallback(() => {
     clear('');
-  }, []);
+  }, [clear]);
 
   return (
     <Button onClick={handlerClear} className="cursor-pointer">

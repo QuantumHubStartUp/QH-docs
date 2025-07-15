@@ -12,13 +12,13 @@ export const useSyncedInputWithAtom = <T>(atomValue: T, setAtom: (val: T) => voi
     if (atomValue !== inputValue) {
       setInputValue(atomValue);
     }
-  }, [atomValue]);
+  }, [atomValue, inputValue, setInputValue]);
 
   useEffect(() => {
     if (debouncedInput !== atomValue) {
       setAtom(debouncedInput);
     }
-  }, [debouncedInput]);
+  }, [debouncedInput, atomValue, setAtom]);
 
   return [inputValue, setInputValue] as const;
 };
